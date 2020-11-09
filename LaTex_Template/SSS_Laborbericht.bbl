@@ -1,0 +1,35 @@
+\begin{thebibliography}{1}
+  \providebibliographyfont{name}{}%
+  \providebibliographyfont{lastname}{}%
+  \providebibliographyfont{title}{\emph}%
+  \providebibliographyfont{jtitle}{\btxtitlefont}%
+  \providebibliographyfont{etal}{\emph}%
+  \providebibliographyfont{journal}{}%
+  \providebibliographyfont{volume}{}%
+  \providebibliographyfont{ISBN}{\MakeUppercase}%
+  \providebibliographyfont{ISSN}{\MakeUppercase}%
+  \providebibliographyfont{url}{\url}%
+  \providebibliographyfont{numeral}{}%
+  \expandafter\btxselectlanguage\expandafter {\btxfallbacklanguage}
+
+\btxselectlanguage {ngerman}
+\bibitem {Franz2016n}
+\btxnamefont {\btxlastnamefont {Franz}, Prof.\btxfnamespacelong
+  Dr.\btxfnamespacelong Matthias\btxfnamespacelong O.}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {Vorlesung 10 - sprache und spracherkennung:
+  Kurzzeit-fouriertransformation, erzeugung und wahrnehmung von sprache,
+  mustererkennung durch korrelation}{Vorlesung 10 - Sprache und
+  Spracherkennung: Kurzzeit-Fouriertransformation, Erzeugung und Wahrnehmung
+  von Sprache, Mustererkennung durch Korrelation}}.
+\newblock \Btxinlong {}\ \btxtitlefont {Vorlesung Technische Grundlagen der
+  angewandten Informatik}, 2016.
+
+\bibitem {Franz2016e}
+\btxnamefont {\btxlastnamefont {Franz}, Prof.\btxfnamespacelong
+  Dr.\btxfnamespacelong Matthias\btxfnamespacelong O.}\btxauthorcolon\
+  \btxtitlefont {\btxifchangecase {Vorlesung 1 - einführung}{Vorlesung 1 -
+  Einführung}}.
+\newblock \Btxinlong {}\ \btxtitlefont {Vorlesung Technische Grundlagen der
+  angewandten Informatik}, 2016.
+
+\end{thebibliography}

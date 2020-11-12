@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.30)  9 NOV 2020 15:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.30)  12 NOV 2020 23:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1404,6 +1404,7 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 (./SSS_Laborbericht.aux (./preface/cover.aux) (./preface/abstract.aux)
 (./preface/tableofcontents.aux) (./preface/listoffigures.aux)
 (./preface/listoftables.aux) (./preface/lstlistoflistings.aux)
+No file chapter1.txt.aux.
 (./appendix/bibliography.aux))
 \openout1 = `SSS_Laborbericht.aux'.
 
@@ -1577,6 +1578,16 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 9.
 
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+[]|[]\T1/ptm/m/n/12 sarah.tiefert@htwg-
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--15
+[]|[]\T1/ptm/m/n/12 dominik.fellbaum@htwg-
+ []
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 17--18
 []|[]\T1/ptm/m/n/12 juergen.keppler@htwg-
  []
@@ -1701,12 +1712,16 @@ AED: lastpage setting LastPage
 (./appendix/bibliography.aux))
 Package rerunfilecheck Info: File `SSS_Laborbericht.out' has not changed.
 (rerunfilecheck)             Checksum: 59089D5312575F35BA51DA73CF9333F4;4473.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 39414 strings out of 479497
- 854183 string characters out of 5876370
+ 39416 strings out of 479497
+ 854211 string characters out of 5876370
  1258269 words of memory out of 5000000
- 55572 multiletter control sequences out of 15000+600000
+ 55573 multiletter control sequences out of 15000+600000
  568067 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,12n,107p,712b,709s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1714,10 +1729,10 @@ Here is how much of TeX's memory you used:
 f-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1
 /urw/times/utmr8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/times/utmri8a
 .pfb>
-Output written on SSS_Laborbericht.pdf (14 pages, 66978 bytes).
+Output written on SSS_Laborbericht.pdf (14 pages, 67198 bytes).
 PDF statistics:
- 276 PDF objects out of 1000 (max. 8388607)
- 252 compressed objects within 3 object streams
+ 278 PDF objects out of 1000 (max. 8388607)
+ 254 compressed objects within 3 object streams
  53 named destinations out of 1000 (max. 500000)
  274 words of extra memory for PDF output out of 10000 (max. 10000000)
 

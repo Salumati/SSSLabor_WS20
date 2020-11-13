@@ -8,18 +8,17 @@ from natsort import natsorted
 
 dirname = os.path.join(os.path.dirname(__file__), 'data/')
 allFiles = natsorted(glob.glob(dirname + "m*.csv"))
-
-arrayAverage = np.zeros(20)
-arrayStandardVariance = np.zeros(20)
-arrayDistance = np.array([100, 130, 160, 190, 220, 250, 280, 310, 340, 370, 400, 430, 460, 490, 520, 550, 580, 610, 640, 670])
+averages = np.zeros(20)
+stdVariances = np.zeros(20)
+distances = np.array([100, 130, 160, 190, 220, 250, 280, 310, 340, 370, 400, 430, 460, 490, 520, 550, 580, 610, 640, 670])
 
 index = 0
 print("Mittelwert / Standardabweichung bestimmen")
 for files in allFiles:
     voltage = np.genfromtxt(files, delimiter=",", skip_header=1000, usecols=([4]))
-    arrayStandardVariance[index] = np.std(voltage)
-    arrayAverage[index] = voltage.mean()
-    print("Datei: %d, Mittelwert: %f, Standardabweichung: %f" % (index + 1, arrayAverage[index], arrayStandardVariance[index]))
+    stdVariances[index] = np.std(voltage)
+    averages[index] = voltage.mean()
+    print("Datei: %d, Mittelwert: %f, Standardabweichung: %f" % (index + 1, averages[index], stdVariances[index]))
     index = index + 1
 
 # Create 4 plots
@@ -28,8 +27,8 @@ fig, axes = plt.subplots(nrows=2, ncols=2)
 #
 # PLOT Average
 #
-axes[0, 0].plot(arrayDistance, arrayAverage, 'o', markersize=2, color='red')
-axes[0, 0].plot(arrayDistance, arrayAverage)
+axes[0, 0].plot(distances, averages, 'o', markersize=2, color='red')
+axes[0, 0].plot(distances, averages)
 axes[0, 0].set_ylabel("Voltage [V]")
 axes[0, 0].set_xlabel("Distance [mm]")
 axes[0, 0].set_title("Average measured values")
@@ -37,8 +36,8 @@ axes[0, 0].set_title("Average measured values")
 #
 # PLOT Standard Variance
 #
-axes[0, 1].plot(arrayDistance, arrayStandardVariance, 'o', markersize=2, color='red')
-axes[0, 1].plot(arrayDistance, arrayStandardVariance)
+axes[0, 1].plot(distances, stdVariances, 'o', markersize=2, color='red')
+axes[0, 1].plot(distances, stdVariances)
 axes[0, 1].set_xlabel("Distance [mm]")
 axes[0, 1].set_ylabel("Voltage [V]")
 axes[0, 1].set_title("Standardabweichung")
@@ -48,15 +47,15 @@ axes[0, 1].set_title("Standardabweichung")
 #
 # Calculations from the DIN A4 paper
 #
-arrayDistancePaper = np.array([100, 130, 160, 190, 220, 250, 280, 310, 340, 370, 400, 430, 460, 490, 520, 550, 580, 610, 640, 670, 700])
-arrayVoltagePaper = np.array(
+distancePaper = np.array([100, 130, 160, 190, 220, 250, 280, 310, 340, 370, 400, 430, 460, 490, 520, 550, 580, 610, 640, 670, 700])
+voltagePaper = np.array(
     [1.363, 1.212, 1.078, 0.973, 0.897, 0.8215, 0.7653, 0.6992, 0.6567, 0.6374, 0.5986, 0.5604, 0.5415, 0.5227, 0.5228, 0.5037, 0.4848,
      0.4847, 0.4846, 0.4846, 0.4657])
 #
 # PLOT
 #
-axes[1, 0].plot(arrayDistancePaper, arrayVoltagePaper, 'o', markersize=2, color='red')
-axes[1, 0].plot(arrayDistancePaper, arrayVoltagePaper, markersize=1, linestyle='-')
+axes[1, 0].plot(distancePaper, voltagePaper, 'o', markersize=2, color='red')
+axes[1, 0].plot(distancePaper, voltagePaper, markersize=1, linestyle='-')
 axes[1, 0].set_xlabel("Distance [mm]")
 axes[1, 0].set_ylabel("Voltage [V]")
 axes[1, 0].set_title("Nicht logarithmiert")
@@ -64,10 +63,10 @@ axes[1, 0].set_title("Nicht logarithmiert")
 arrayDistancePaperLog = np.zeros(21)
 arrayVoltagePaperLog = np.zeros(21)
 for index in range(0, 21):
-    arrayDistancePaperLog[index] = np.log(arrayDistancePaper[index])
-    arrayVoltagePaperLog[index] = np.log(arrayVoltagePaper[index])
+    arrayDistancePaperLog[index] = np.log(distancePaper[index])
+    arrayVoltagePaperLog[index] = np.log(voltagePaper[index])
     print("Normal: %f Log: %f           Normal: %f Log: %f" % (
-        arrayDistancePaper[index], arrayDistancePaperLog[index], arrayVoltagePaper[index], arrayVoltagePaperLog[index]))
+        distancePaper[index], arrayDistancePaperLog[index], voltagePaper[index], arrayVoltagePaperLog[index]))
 
 axes[1, 1].plot(arrayDistancePaperLog, arrayVoltagePaperLog, 'o', markersize=2, color='red')
 axes[1, 1].plot(arrayDistancePaperLog, arrayVoltagePaperLog, markersize=1, linestyle='-')

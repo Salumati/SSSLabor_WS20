@@ -28,12 +28,14 @@ fig, axes = plt.subplots(nrows=2, ncols=2)
 #
 # PLOT Average
 #
+
 axes[0, 0].plot(arrayDistance, arrayAverage, 'o', markersize=2, color='red')
 axes[0, 0].plot(arrayDistance, arrayAverage)
 axes[0, 0].set_ylabel("Voltage [V]")
 axes[0, 0].set_xlabel("Distance [mm]")
 axes[0, 0].set_title("Average measured values")
 
+axes[0, 0].show()
 #
 # PLOT Standard Variance
 #
@@ -78,8 +80,6 @@ axes[1, 1].set_title("Logarithmiert")
 # Averages from Log
 avg_voltageLog = np.mean(arrayVoltagePaperLog)
 avg_distance = np.mean(arrayDistancePaperLog)
-
-fig.show()
 
 #
 # Linear Regression

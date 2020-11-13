@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.30)  13 NOV 2020 13:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.30)  13 NOV 2020 15:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1583,7 +1583,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 13--15
-[]|[]\T1/ptm/m/n/12 dominik.fellbaum@htwg-
+[]|[]\T1/ptm/m/n/12 dominic.fellbaum@htwg-
  []
 
 
@@ -1667,38 +1667,34 @@ l.191 \include{preface/abstract}
 
 ]
 Kapitel 1.
+<media/triangulationGraphik.png, id=185, 185.19188pt x 188.95593pt>
+File: media/triangulationGraphik.png Graphic file (type png)
+<use media/triangulationGraphik.png>
+Package pdftex.def Info: media/triangulationGraphik.png  used on input line 17.
 
-Package caption Warning: \label without proper reference on input line 21.
-See the caption package documentation for explanation.
+(pdftex.def)             Requested size: 185.1914pt x 188.95546pt.
+[2
 
-
-LaTeX Warning: Reference `Versuchsaufbau' on page 2 undefined on input line 16.
-
-
-<media/aufbau.png, id=186, 2629.57407pt x 1274.51157pt>
+]
+<media/aufbau.png, id=192, 2629.57407pt x 1274.51157pt>
 File: media/aufbau.png Graphic file (type png)
 <use media/aufbau.png>
-Package pdftex.def Info: media/aufbau.png  used on input line 19.
+Package pdftex.def Info: media/aufbau.png  used on input line 24.
 (pdftex.def)             Requested size: 394.4191pt x 191.16849pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
-6.
-(c:/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
+2.
+ (c:/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-))
-(./chapters/chapter2.tex [2
-
-] [3 <./media/aufbau.png>]
+) [3 <./media/triangulationGraphik.png> <./media/aufbau.png>]) (./chapters/chap
+ter2.tex [4]
 Kapitel 2.
-) (./chapters/chapter3.tex [4
+) (./chapters/chapter3.tex [5
 
 ]
 Kapitel 3.
-) [5
+) [6
 
-] [6
+] [7
 
 ]
 \openout2 = `appendix/bibliography.aux'.
@@ -1712,30 +1708,27 @@ AED: lastpage setting LastPage
 (./preface/listoftables.aux) (./preface/lstlistoflistings.aux)
 (./appendix/bibliography.aux))
 Package rerunfilecheck Info: File `SSS_Laborbericht.out' has not changed.
-(rerunfilecheck)             Checksum: E079E76FD698D0B49DD779AC18A3FB38;3521.
-
-
-LaTeX Warning: There were undefined references.
+(rerunfilecheck)             Checksum: B22825B1A702D4D4A65E8F401250EC26;3521.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 39432 strings out of 479497
- 854474 string characters out of 5876370
+ 39436 strings out of 479497
+ 854617 string characters out of 5876370
  1258269 words of memory out of 5000000
- 55583 multiletter control sequences out of 15000+600000
+ 55586 multiletter control sequences out of 15000+600000
  565533 words of font info for 72 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,12n,107p,712b,709s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texm
 f-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1
 /urw/times/utmr8a.pfb>
-Output written on SSS_Laborbericht.pdf (13 pages, 9439573 bytes).
+Output written on SSS_Laborbericht.pdf (14 pages, 9457338 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
- 214 compressed objects within 3 object streams
+ 241 PDF objects out of 1000 (max. 8388607)
+ 216 compressed objects within 3 object streams
  48 named destinations out of 1000 (max. 500000)
- 223 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 228 words of extra memory for PDF output out of 10000 (max. 10000000)
 

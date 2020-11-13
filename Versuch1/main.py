@@ -28,14 +28,12 @@ fig, axes = plt.subplots(nrows=2, ncols=2)
 #
 # PLOT Average
 #
-
 axes[0, 0].plot(arrayDistance, arrayAverage, 'o', markersize=2, color='red')
 axes[0, 0].plot(arrayDistance, arrayAverage)
 axes[0, 0].set_ylabel("Voltage [V]")
 axes[0, 0].set_xlabel("Distance [mm]")
 axes[0, 0].set_title("Average measured values")
 
-axes[0, 0].show()
 #
 # PLOT Standard Variance
 #
@@ -77,6 +75,8 @@ axes[1, 1].set_xlabel("Distance [mm]")
 axes[1, 1].set_ylabel("Voltage [V]")
 axes[1, 1].set_title("Logarithmiert")
 
+
+
 # Averages from Log
 avg_voltageLog = np.mean(arrayVoltagePaperLog)
 avg_distance = np.mean(arrayDistancePaperLog)
@@ -92,6 +92,8 @@ for i in range(len(arrayVoltagePaperLog)):
 
 a = a1 / a2
 b = avg_distance - a * avg_voltageLog
+
+axes[1, 1].plot(arrayDistancePaperLog, a * arrayDistancePaperLog + b, color='red')
 print("Lineare Regression:")
 print("Parameter A(Steigung): %f" % a)
 print("Parameter B: %f" % b)

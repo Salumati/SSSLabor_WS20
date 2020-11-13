@@ -8,7 +8,8 @@ Bei Versuch 1 ging es um die Messung von Abständen mittels eines Entfernungssen
 
 \subsection*{Fragestellung}
 	Bei der Messung soll die Standardabweichung der einzelnen Messungen ermittelt werden. Hierzu wird für 20 verschiedene Abstände jeweils eine Messung durchgeführt und die vom Sensor zurückgegebene Spannung einerseits als csv Datei gespeichert und zusätzlich handschriftlich notiert.
-	
+
+\pagebreak	
 \subsection*{Messprinzip}
 	Der Sensor sendet mit einer LED ein rotes Licht aus, das vom Objekt reflektiert und dann von einen optischen Positionssensor (OPS) wider erfasst wird. Die Leitfähigkeit des OPS ist von der Einfallposition des Lichts abhängig, so ergeben unterschiedliche Einfallspositionen unterschiedliche Spannungen, aus denen sich dann der Einfallswinkel berechnen lässt. Aus diesen kann man dann über das Triangulationsprinzip die Entfernung ermittelt.
 	
@@ -27,7 +28,7 @@ Bei Versuch 1 ging es um die Messung von Abständen mittels eines Entfernungssen
 	% \caption{Aufbau des Versuchs}
 \end{center}
 	
-	
+\pagebreak	
 \subsection*{Messmittel}
 \ref{Versuchsaufbau}
 	Zur Messung wurden folgende Messmittel benutzt:
@@ -38,6 +39,7 @@ Bei Versuch 1 ging es um die Messung von Abständen mittels eines Entfernungssen
 		\item Brett (als Objekt dessen Abstand gemessen wird)
 	\end{itemize}
 
+\pagebreak
 \section{Messwerte}
 \label{chap:VERSUCH_1_MESSWERTE}
 	
@@ -101,7 +103,7 @@ Bei Versuch 1 ging es um die Messung von Abständen mittels eines Entfernungssen
 	\end{center}
 \label{Tabelle: gemessene Werte}
 	
-
+\pagebreak
 \section{Auswertung}
 \label{chap:VERSUCH_1_AUSWERTUNG}
 
@@ -134,7 +136,7 @@ Aus diesen Mittelwert lässt sich dann die Standardabweichung nach folgender For
 \end{itemize}
 
 	
-
+\pagebreak
 \subsection{Tabelle: Mittelwerte und Standardabweichung}
 \label{chap: Tabllen_Auswertung}
 \begin{center}
@@ -192,10 +194,21 @@ Entfernung in cm & Spannung in V & Mittelwert der Spannung in V & Standardabweic
 \captionof{table}{gefundene Mittelwerte und Standardabweichung}
 \end{center}
 
+\pagebreak
 \subsection{Plots}
 \label{Graphik: Plots vom Mittelwert und Standardabweichung}
-	Graphik: plot der gefundenen Mittelwerte
+
+	\includegraphics[scale=1]{media/avrg.png}
+	\captionof{figure}{Plot zum Mittelwert}
+
+	\includegraphics[scale=1]{media/stdabw.png}
+	\captionof{figure}{Plot zum Standardabweichung}
+
 	
 \section{Interpretation}
+
+Die Standardabweichung ist bei einer Entfernung von 10 cm am höchsten, fast doppelt so hoch wie bei den anderen Messungen, daraus lässt sich schließen das er der ungenauste Wert ist.
+Bei den andern Werten bleibt die Standardabweichung sehr konstant.
+Die Standardabweichung sollte idealerweise nur vom Rauschen, also zufälligen Störungen durch die Umgebung, verursacht werden. Da die Standardabweichung bei einen Wert deutlich höher ist als bei den anderen vermute ich das es bei dieser zu einer stärkeren Störung von außen kam, z.B. durch anstoßen des Sensors oder Lichteinfall.
 	
 \label{chap:VERSUCH_1_INTERPRETATION}

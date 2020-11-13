@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.30)  13 NOV 2020 17:30
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.30)  13 NOV 2020 18:42
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1667,48 +1667,78 @@ l.191 \include{preface/abstract}
 
 ]
 Kapitel 1.
-<media/triangulationGraphik.png, id=202, 185.19188pt x 188.95593pt>
-File: media/triangulationGraphik.png Graphic file (type png)
-<use media/triangulationGraphik.png>
-Package pdftex.def Info: media/triangulationGraphik.png  used on input line 17.
-
-(pdftex.def)             Requested size: 185.1914pt x 188.95546pt.
 [2
 
 ]
-<media/aufbau.png, id=209, 2629.57407pt x 1274.51157pt>
+<media/triangulationGraphik.png, id=211, 185.19188pt x 188.95593pt>
+File: media/triangulationGraphik.png Graphic file (type png)
+<use media/triangulationGraphik.png>
+Package pdftex.def Info: media/triangulationGraphik.png  used on input line 18.
+
+(pdftex.def)             Requested size: 185.1914pt x 188.95546pt.
+<media/aufbau.png, id=212, 2629.57407pt x 1274.51157pt>
 File: media/aufbau.png Graphic file (type png)
 <use media/aufbau.png>
-Package pdftex.def Info: media/aufbau.png  used on input line 25.
+Package pdftex.def Info: media/aufbau.png  used on input line 26.
 (pdftex.def)             Requested size: 394.4191pt x 191.16849pt.
+ [3 <./media/triangulationGraphik.png> <./media/aufbau.png>]
 LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
-5.
- (c:/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+6.
+
+(c:/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-) [3 <./media/triangulationGraphik.png> <./media/aufbau.png>] [4]
-Underfull \hbox (badness 10000) in paragraph at lines 127--129
+) [4] [5]
+Underfull \hbox (badness 10000) in paragraph at lines 129--131
 
  []
 
+[6]
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 192.
+(caption)                particular \caption on input line 194.
 See the caption package documentation for explanation.
 
 
-Overfull \hbox (9.47913pt too wide) in paragraph at lines 142--192
+Overfull \hbox (9.47913pt too wide) in paragraph at lines 144--194
  [] 
  []
 
-[5]) (./chapters/chapter2.tex [6]
+[7]
+<media/avrg.png, id=245, 252.945pt x 188.95593pt>
+File: media/avrg.png Graphic file (type png)
+<use media/avrg.png>
+Package pdftex.def Info: media/avrg.png  used on input line 201.
+(pdftex.def)             Requested size: 252.94438pt x 188.95546pt.
+
+
+Package caption Warning: \captionsetup{type*=...} or \captionof
+(caption)                outside box or environment on input line 202.
+See the caption package documentation for explanation.
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 202.
+See the caption package documentation for explanation.
+
+<media/stdabw.png, id=246, 231.11343pt x 188.95593pt>
+File: media/stdabw.png Graphic file (type png)
+<use media/stdabw.png>
+Package pdftex.def Info: media/stdabw.png  used on input line 204.
+(pdftex.def)             Requested size: 231.11287pt x 188.95546pt.
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 205.
+See the caption package documentation for explanation.
+
+) (./chapters/chapter2.tex [8 <./media/avrg.png> <./media/stdabw.png>]
 Kapitel 2.
-) (./chapters/chapter3.tex [7
+) (./chapters/chapter3.tex [9
 
 ]
 Kapitel 3.
-) [8
+) [10
 
-] [9
+] [11
 
 ]
 \openout2 = `appendix/bibliography.aux'.
@@ -1723,12 +1753,16 @@ AED: lastpage setting LastPage
 (./appendix/bibliography.aux))
 Package rerunfilecheck Info: File `SSS_Laborbericht.out' has not changed.
 (rerunfilecheck)             Checksum: B8E9093CD3C7FFEB991FE6465294FF33;4072.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 39474 strings out of 479497
- 855139 string characters out of 5876370
- 1263269 words of memory out of 5000000
- 55600 multiletter control sequences out of 15000+600000
+ 39492 strings out of 479497
+ 855416 string characters out of 5876370
+ 1262269 words of memory out of 5000000
+ 55612 multiletter control sequences out of 15000+600000
  572799 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,12n,107p,712b,709s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1739,10 +1773,10 @@ public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/symbo
 l/usyr.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/tex
 live/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2020/texmf-di
 st/fonts/type1/urw/times/utmri8a.pfb>
-Output written on SSS_Laborbericht.pdf (16 pages, 9491462 bytes).
+Output written on SSS_Laborbericht.pdf (18 pages, 9513552 bytes).
 PDF statistics:
- 290 PDF objects out of 1000 (max. 8388607)
- 258 compressed objects within 3 object streams
- 56 named destinations out of 1000 (max. 500000)
- 252 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 304 PDF objects out of 1000 (max. 8388607)
+ 268 compressed objects within 3 object streams
+ 60 named destinations out of 1000 (max. 500000)
+ 262 words of extra memory for PDF output out of 10000 (max. 10000000)
 

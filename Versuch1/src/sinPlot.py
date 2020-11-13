@@ -1,9 +1,13 @@
 import numpy as np
-import matplotlib as plt
+import matplotlib.pyplot as plt
 
-X = np.linspace(-np.pi, np.pi, 256)
-C,S = np.cos(X), np.sin(X)
-# plot
-fig,ax = plt.subplots()
-ax.plot(X,C)
-ax.plot(X,S)
+x = np.array(range(100))
+
+a = -1.688586
+b = 5.168557
+
+y = a * x + b
+
+plt.plot(x, y, '-')
+plt.ylabel('some numbers')
+plt.show()

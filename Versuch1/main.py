@@ -68,14 +68,6 @@ for index in range(0, 21):
     print("Normal: %f Log: %f           Normal: %f Log: %f" % (
         distancePaper[index], arrayDistancePaperLog[index], voltagePaper[index], arrayVoltagePaperLog[index]))
 
-axes[1, 1].plot(arrayDistancePaperLog, arrayVoltagePaperLog, 'o', markersize=2, color='red')
-axes[1, 1].plot(arrayDistancePaperLog, arrayVoltagePaperLog, markersize=1, linestyle='-')
-axes[1, 1].set_xlabel("Distance [mm]")
-axes[1, 1].set_ylabel("Voltage [V]")
-axes[1, 1].set_title("Logarithmiert")
-
-
-
 # Averages from Log
 avg_voltageLog = np.mean(arrayVoltagePaperLog)
 avg_distance = np.mean(arrayDistancePaperLog)
@@ -92,11 +84,15 @@ for i in range(len(arrayVoltagePaperLog)):
 a = a1 / a2
 b = avg_distance - a * avg_voltageLog
 
-axes[1, 1].plot(arrayDistancePaperLog, a * arrayDistancePaperLog + b, color='red')
 print("Lineare Regression:")
 print("Parameter A(Steigung): %f" % a)
 print("Parameter B: %f" % b)
-
+axes[1, 1].plot(arrayVoltagePaperLog, arrayDistancePaperLog, 'bo', markersize=3)
+axes[1, 1].plot(arrayVoltagePaperLog, [(a * x + b) for x in arrayVoltagePaperLog], 'r')
+axes[1, 1].set_ylabel("Distance [cm]")
+axes[1, 1].set_xlabel("Voltage [V]")
+axes[1, 1].set_title("Lineare Regression")
+axes[1, 1].grid()
 #
 # TASK 3
 #

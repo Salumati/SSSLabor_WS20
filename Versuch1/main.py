@@ -79,6 +79,8 @@ axes[1, 1].set_title("Logarithmiert")
 avg_voltageLog = np.mean(arrayVoltagePaperLog)
 avg_distance = np.mean(arrayDistancePaperLog)
 
+fig.show()
+
 #
 # Linear Regression
 #

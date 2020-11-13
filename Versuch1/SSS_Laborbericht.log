@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.30)  13 NOV 2020 13:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.30)  13 NOV 2020 17:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1527,7 +1527,7 @@ your preamble.
 \openout2 = `preface/cover.aux'.
 
 (./preface/cover.tex
-<preface/htwg-logo.png, id=107, 298.716pt x 119.4864pt>
+<preface/htwg-logo.png, id=119, 298.716pt x 119.4864pt>
 File: preface/htwg-logo.png Graphic file (type png)
 <use preface/htwg-logo.png>
 Package pdftex.def Info: preface/htwg-logo.png  used on input line 7.
@@ -1583,7 +1583,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--13
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 13--15
-[]|[]\T1/ptm/m/n/12 dominik.fellbaum@htwg-
+[]|[]\T1/ptm/m/n/12 dominic.fellbaum@htwg-
  []
 
 
@@ -1667,38 +1667,48 @@ l.191 \include{preface/abstract}
 
 ]
 Kapitel 1.
+<media/triangulationGraphik.png, id=202, 185.19188pt x 188.95593pt>
+File: media/triangulationGraphik.png Graphic file (type png)
+<use media/triangulationGraphik.png>
+Package pdftex.def Info: media/triangulationGraphik.png  used on input line 17.
 
-Package caption Warning: \label without proper reference on input line 21.
+(pdftex.def)             Requested size: 185.1914pt x 188.95546pt.
+[2
+
+]
+<media/aufbau.png, id=209, 2629.57407pt x 1274.51157pt>
+File: media/aufbau.png Graphic file (type png)
+<use media/aufbau.png>
+Package pdftex.def Info: media/aufbau.png  used on input line 25.
+(pdftex.def)             Requested size: 394.4191pt x 191.16849pt.
+LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 3
+5.
+ (c:/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+) [3 <./media/triangulationGraphik.png> <./media/aufbau.png>] [4]
+Underfull \hbox (badness 10000) in paragraph at lines 127--129
+
+ []
+
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 192.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `Versuchsaufbau' on page 2 undefined on input line 16.
+Overfull \hbox (9.47913pt too wide) in paragraph at lines 142--192
+ [] 
+ []
 
-
-<media/aufbau.png, id=186, 2629.57407pt x 1274.51157pt>
-File: media/aufbau.png Graphic file (type png)
-<use media/aufbau.png>
-Package pdftex.def Info: media/aufbau.png  used on input line 19.
-(pdftex.def)             Requested size: 394.4191pt x 191.16849pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
-LaTeX Font Info:    Trying to load font information for TS1+ptm on input line 2
-6.
-(c:/texlive/2020/texmf-dist/tex/latex/psnfss/ts1ptm.fd
-File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
-))
-(./chapters/chapter2.tex [2
-
-] [3 <./media/aufbau.png>]
+[5]) (./chapters/chapter2.tex [6]
 Kapitel 2.
-) (./chapters/chapter3.tex [4
+) (./chapters/chapter3.tex [7
 
 ]
 Kapitel 3.
-) [5
+) [8
 
-] [6
+] [9
 
 ]
 \openout2 = `appendix/bibliography.aux'.
@@ -1712,30 +1722,27 @@ AED: lastpage setting LastPage
 (./preface/listoftables.aux) (./preface/lstlistoflistings.aux)
 (./appendix/bibliography.aux))
 Package rerunfilecheck Info: File `SSS_Laborbericht.out' has not changed.
-(rerunfilecheck)             Checksum: E079E76FD698D0B49DD779AC18A3FB38;3521.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
+(rerunfilecheck)             Checksum: B8E9093CD3C7FFEB991FE6465294FF33;4072.
  ) 
 Here is how much of TeX's memory you used:
- 39432 strings out of 479497
- 854474 string characters out of 5876370
- 1258269 words of memory out of 5000000
- 55583 multiletter control sequences out of 15000+600000
- 565533 words of font info for 72 fonts, out of 8000000 for 9000
+ 39474 strings out of 479497
+ 855139 string characters out of 5876370
+ 1263269 words of memory out of 5000000
+ 55600 multiletter control sequences out of 15000+600000
+ 572799 words of font info for 88 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  94i,12n,107p,712b,709s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texm
-f-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1
-/urw/times/utmr8a.pfb>
-Output written on SSS_Laborbericht.pdf (13 pages, 9439573 bytes).
+f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmsy10.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/symbo
+l/usyr.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/tex
+live/2020/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2020/texmf-di
+st/fonts/type1/urw/times/utmri8a.pfb>
+Output written on SSS_Laborbericht.pdf (16 pages, 9491462 bytes).
 PDF statistics:
- 237 PDF objects out of 1000 (max. 8388607)
- 214 compressed objects within 3 object streams
- 48 named destinations out of 1000 (max. 500000)
- 223 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 290 PDF objects out of 1000 (max. 8388607)
+ 258 compressed objects within 3 object streams
+ 56 named destinations out of 1000 (max. 500000)
+ 252 words of extra memory for PDF output out of 10000 (max. 10000000)
 

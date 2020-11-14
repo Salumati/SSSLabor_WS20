@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.30)  14 NOV 2020 12:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.30)  14 NOV 2020 12:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1850,7 +1850,7 @@ Missing character: There is no ± in font zptmcm7t!
 LaTeX Warning: Command \" invalid in math mode on input line 99.
 
 Missing character: There is no ä in font zptmcm7t!
-) [16] [17] (./chapters/code.tex
+[16]) [17] (./chapters/code.tex
 (c:/texlive/2020/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
@@ -1904,7 +1904,7 @@ b><c:/texlive/2020/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2020/
 texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2020/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on SSS_Laborbericht.pdf (26 pages, 9987386 bytes).
+Output written on SSS_Laborbericht.pdf (26 pages, 9987994 bytes).
 PDF statistics:
  403 PDF objects out of 1000 (max. 8388607)
  346 compressed objects within 4 object streams

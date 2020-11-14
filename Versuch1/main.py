@@ -111,6 +111,8 @@ standardAbweichungBreitDatei = np.std(voltageDinA4BreitDatei)
 dina4LangVoltage = 0.6758
 dina4BreitVoltage = 0.8859
 
+print("Standardabweichung Spannung: %f" % standardAbweichungLangDatei)
+
 # Vertrauensbereich 68% = x +- Standardabweichung * t
 # t für 68% = 1.84
 t68 = 1.84
@@ -126,20 +128,20 @@ print("Vertrauensbereich Sicherheit: 95%% bei langer Seite zwischen: %f - %f" % 
     (dina4LangVoltage + standardAbweichungLangDatei * t95)))
 
 # Fehler des Abstands = e^b * a * x * Fehler von x
-fehlerAbstandLang68 = math.e ** b * a * dina4LangVoltage * standardAbweichungLangDatei * t68  # für Sicherheit von 68%, korrekturfaktor fehlt!
-fehlerAbstandLang95 = math.e ** b * a * dina4LangVoltage * 2 * standardAbweichungLangDatei * t95  # für Sicherheit von 95%
+fehlerAbstandLang68 = math.e ** b * a * dina4LangVoltage ** (a - 1) * standardAbweichungLangDatei * t68  # für Sicherheit von 68%, korrekturfaktor fehlt!
+# fehlerAbstandLang95 = math.e ** b * a * dina4LangVoltage * 2 * standardAbweichungLangDatei * t95  # für Sicherheit von 95%
 
 # AbstandLang = e^b * dina4Voltage^a
 abstanddinA4Lang = (math.e ** b) * (dina4LangVoltage ** a)
-
-print("Die länge der langen DinA4 Seite beträgt %f ± %f cm (Vertrauensbereich 68,26%%)" % (
+print("Der Mesfehler der langen Seite ohne korrektur: %f" %fehlerAbstandLang68)
+print("Die Länge der langen DinA4 Seite beträgt %f ± %f cm (Vertrauensbereich 68,26%%)" % (
     abstanddinA4Lang / 10, fehlerAbstandLang68 / 10))
-print("Die länge der langen DinA4 Seite beträgt %f ± %f cm (Vertrauensbereich 95%%)" % (
-    abstanddinA4Lang, fehlerAbstandLang95))
+'''print("Die länge der langen DinA4 Seite beträgt %f ± %f cm (Vertrauensbereich 95%%)" % (
+    abstanddinA4Lang, fehlerAbstandLang95))'''
 
 # Teil b
 # Fehler breite Seite:
-fehlerAbstandBreit68 = math.e ** b * a * dina4BreitVoltage * standardAbweichungBreitDatei * t68
+fehlerAbstandBreit68 = math.e ** b * a * dina4BreitVoltage ** (a - 1) * standardAbweichungBreitDatei * t68
 fehlerAbstandBreit95 = math.e ** b * a * dina4BreitVoltage * 2 * standardAbweichungBreitDatei * t95
 
 abstanddinA4Breit = (math.e ** b) * (dina4BreitVoltage ** a)

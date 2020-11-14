@@ -15,9 +15,100 @@ Das Messprinzip, der Aufbau und die Messmittel sind wie in den obrigen Versuchen
 \label{chap:VERSUCH_3_MESSWERTE}
 
 \includegraphics[scale=.75]{media/paperPage.png}
+\captionof{figure}{fig: von Hand gemessene Werte}
+\label{fig:WerteDinA4}
 
 \section{Auswertung}
 \label{chap:VERSUCH_3_AUSWERTUNG}
+
+\subsection{Teil a: Ermittlung des Messfehlers}
+\label{subS:Versuch3a}
+Zunächst wird der Fehler der Spannungsmessung wie in Versuch 1 über die Standardabweichung für die Messung der langen Seite ermittelt:
+\begin{equation}
+	s_{\bar{l_v}} = 0.0177
+\end{equation}
+\begin{itemize}
+	\item $l_v$ = Spannung der Messung der langen Seite
+\end{itemize}
+
+Der Messfehler muss zusätzlich mit einen Korrekturfaktor ausgeglichen werden.
+Da lediglich einmal gemessen wurde ist der verwendete Korrekturfaktor $t = 1,84$.
+Daraus ergibt sich für die \textbf{gemessene Volt der langen Seite} ein Fehler von:
+
+\begin{equation}
+	l_v = 0,6758 \pm 1,84 * 0,0177 V = 0,6758 \pm 0,0326 V
+\end{equation}
+
+Dabei liegt der wahre Wert der Messung mit einer Wahrscheinlichkeit von 68,27 im Vertrauensbereich $[0.6432V, 0.7084V]$ und mit einer Wahrscheinlichkeit von 95,45\% im Bereich von $[0.4508V, 0.9008V]$.
+
+Da die Entfernung indirekt aus der gemessenen Spannung berechnet wird muss für die Umrechnung die Fehlerfortpflanzung berechnet werden.
+Der Messfehler für die Distanz ergibt sich aus der Formel für die Umrechnung
+\begin{equation}
+	\Delta l_d = f'(l_v) * \Delta l_v
+\end{equation}
+\begin{itemize}
+\item $\Delta l_d$ ist der Messfehler für die Distanz
+\item $\Delta l_v$ ist der Messfehler für die gemessene Spannung
+\item $f'(l_v)$ ist die Ableitung der Übertragungsfunktion
+\end{itemize}
+
+die Übertragungsfunktion:
+\begin{equation}
+	f(l_v) = e^b * x^a
+\end{equation}
+\begin{equation}
+	f'(l_v) = e^b * a * l_v ^{a-1}
+\end{equation}
+d.h. der konkrete Messfehler $\Delta l_d$ ist:
+\begin{equation}
+	\Delta l_d = e^5,17 * -1,69 * l_v ^ -2,69 * \Delta l_v = 2,71
+\end{equation}
+Unter Berücksichtigung des oben genannten Korrekturfaktor ergibt sich folgendes als Ergebnis für die \textbf{Länge der langen DinA 4 Seite}:
+\begin{equation}
+	l_d = 34.04  ± -2.77 cm
+\end{equation}
+
+
+\subsection{Teil b: Flächenmessung}
+\label{subS:Versuch3b}
+
+Formel zur Flächenberechnung:
+\begin{equation}
+	F = l * b = f(x)
+\end{equation}
+\begin{itemize}
+	\item F = Fläche
+	\item l = Länge lange Seite des DinA 4 Blattes
+	\item b = Länge kurze Seite des DinA 4 Blattes
+\end{itemize}
+Wird nun die Fläche berechnet ergibt sich der Messfehler laut Gaußschem Fehlerfortpflanzungsgesetz aus den partiellen Ableitungen der einzelnen Messgrößen
+\begin{equation}
+	\Delta F = \sqrt{(\frac{\delta}{\delta l}f(x) * \Delta l)^2 + (\frac{\delta}{\delta b}f(b) * \Delta l)^2}
+\end{equation}
+mit:
+\begin{equation}
+	\frac{\delta}{\delta l}f(x) * \Delta l = b * \Delta l
+\end{equation}
+\begin{equation}
+	\frac{\delta}{\delta b}f(b) * \Delta l = l * \Delta b
+\end{equation}
+
+Die Länge der langen Seite und ihr Fehler sind aus \ref{subS:Versuch3a} bekannt, nach der selben Methode wurde für die kurze Seite folgende Länge und Fehler ermittelt:
+
+\begin{equation}
+	Länge kurze Seite = 21,6 \pm 1.20 cm
+\end{equation}
+
+Damit ergibt sich ein Messfehler von:
+\begin{equation}
+	\Delta F = 74.103
+\end{equation}
+
+somit ist das Ergebnis der Flächenrechnung:
+\begin{equation}
+	F = 733.78 \pm 74.10 cm^2
+\end{equation}
+
 
 \section{Interpretation}
 \label{chap:VERSUCH_3_INTERPRETATION}

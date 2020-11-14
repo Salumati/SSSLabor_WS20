@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.30)  14 NOV 2020 12:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/W32TeX) (preloaded format=pdflatex 2020.10.30)  14 NOV 2020 13:11
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1407,6 +1407,12 @@ File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
 
 LaTeX Warning: Label `chap:VERSUCH_1_INTERPRETATION' multiply defined.
 
+
+LaTeX Warning: Label `lst:Code' multiply defined.
+
+
+LaTeX Warning: Label `lst:Code' multiply defined.
+
 (./appendix/bibliography.aux))
 \openout1 = `SSS_Laborbericht.aux'.
 
@@ -1530,7 +1536,7 @@ your preamble.
 \openout2 = `preface/cover.aux'.
 
 (./preface/cover.tex
-<preface/htwg-logo.png, id=119, 298.716pt x 119.4864pt>
+<preface/htwg-logo.png, id=131, 298.716pt x 119.4864pt>
 File: preface/htwg-logo.png Graphic file (type png)
 <use preface/htwg-logo.png>
 Package pdftex.def Info: preface/htwg-logo.png  used on input line 7.
@@ -1673,13 +1679,13 @@ Kapitel 1.
 [2
 
 ]
-<media/triangulationGraphik.png, id=225, 185.19188pt x 188.95593pt>
+<media/triangulationGraphik.png, id=244, 185.19188pt x 188.95593pt>
 File: media/triangulationGraphik.png Graphic file (type png)
 <use media/triangulationGraphik.png>
 Package pdftex.def Info: media/triangulationGraphik.png  used on input line 18.
 
 (pdftex.def)             Requested size: 185.1914pt x 188.95546pt.
-<media/aufbau.png, id=226, 2629.57407pt x 1274.51157pt>
+<media/aufbau.png, id=245, 2629.57407pt x 1274.51157pt>
 File: media/aufbau.png Graphic file (type png)
 <use media/aufbau.png>
 Package pdftex.def Info: media/aufbau.png  used on input line 26.
@@ -1724,7 +1730,7 @@ Overfull \hbox (9.47913pt too wide) in paragraph at lines 143--193
  []
 
 [7]
-<media/avrg.png, id=258, 252.945pt x 188.95593pt>
+<media/avrg.png, id=277, 252.945pt x 188.95593pt>
 File: media/avrg.png Graphic file (type png)
 <use media/avrg.png>
 Package pdftex.def Info: media/avrg.png  used on input line 200.
@@ -1735,7 +1741,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 201.
 See the caption package documentation for explanation.
 
-<media/stdabw.png, id=259, 231.11343pt x 188.95593pt>
+<media/stdabw.png, id=278, 231.11343pt x 188.95593pt>
 File: media/stdabw.png Graphic file (type png)
 <use media/stdabw.png>
 Package pdftex.def Info: media/stdabw.png  used on input line 203.
@@ -1755,7 +1761,7 @@ See the caption package documentation for explanation.
 [9
 
 ] [10]
-<media/dataV2.png, id=273, 246.9225pt x 176.15813pt>
+<media/dataV2.png, id=292, 246.9225pt x 176.15813pt>
 File: media/dataV2.png Graphic file (type png)
 <use media/dataV2.png>
 Package pdftex.def Info: media/dataV2.png  used on input line 79.
@@ -1766,7 +1772,7 @@ Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 80.
 See the caption package documentation for explanation.
 
-<media/linReg.png, id=274, 453.19313pt x 345.54094pt>
+<media/linReg.png, id=293, 453.19313pt x 345.54094pt>
 File: media/linReg.png Graphic file (type png)
 <use media/linReg.png>
 Package pdftex.def Info: media/linReg.png  used on input line 84.
@@ -1798,7 +1804,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 94--96
  []
 
 [12 <./media/linReg.png>]
-<media/linReg2.png, id=288, 456.20438pt x 351.56343pt>
+<media/linReg2.png, id=308, 456.20438pt x 351.56343pt>
 File: media/linReg2.png Graphic file (type png)
 <use media/linReg2.png>
 Package pdftex.def Info: media/linReg2.png  used on input line 115.
@@ -1821,7 +1827,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 114--248
 
 (./chapters/chapter3.tex [13 <./media/linReg2.png>]
 Kapitel 3.
-<media/paperPage.png, id=296, 594.22pt x 155.58125pt>
+<media/paperPage.png, id=315, 594.22pt x 155.58125pt>
 File: media/paperPage.png Graphic file (type png)
 <use media/paperPage.png>
 Package pdftex.def Info: media/paperPage.png  used on input line 17.
@@ -1855,9 +1861,239 @@ Missing character: There is no ä in font zptmcm7t!
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 5.
+nput line 7.
+
+Overfull \hbox (437.3912pt too wide) in paragraph at lines 13--15
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (149.38828pt too wide) in paragraph at lines 18--19
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (379.79062pt too wide) in paragraph at lines 21--22
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][] 
+ []
+
+[18
+
+]
+Overfull \hbox (48.58725pt too wide) in paragraph at lines 30--31
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (77.38754pt too wide) in paragraph at lines 39--40
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (502.19186pt too wide) in paragraph at lines 56--57
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (530.99216pt too wide) in paragraph at lines 58--59
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (106.18784pt too wide) in paragraph at lines 63--64
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (84.58762pt too wide) in paragraph at lines 64--65
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[19]
+Overfull \hbox (12.58688pt too wide) in paragraph at lines 72--73
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (12.58688pt too wide) in paragraph at lines 74--75
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][] 
+ []
+
+
+Overfull \hbox (350.99033pt too wide) in paragraph at lines 75--77
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (437.3912pt too wide) in paragraph at lines 92--94
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (149.38828pt too wide) in paragraph at lines 97--98
+[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (379.79062pt too wide) in paragraph at lines 100--101
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][] 
+ []
+
+[20]
+Overfull \hbox (48.58725pt too wide) in paragraph at lines 109--110
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (77.38754pt too wide) in paragraph at lines 118--119
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (502.19186pt too wide) in paragraph at lines 129--130
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (530.99216pt too wide) in paragraph at lines 131--132
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (106.18784pt too wide) in paragraph at lines 136--137
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (84.58762pt too wide) in paragraph at lines 137--138
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[21]
+Overfull \hbox (12.58688pt too wide) in paragraph at lines 145--146
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (12.58688pt too wide) in paragraph at lines 147--148
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][] 
+ []
+
+
+Overfull \hbox (350.99033pt too wide) in paragraph at lines 148--150
+[][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (250.1893pt too wide) in paragraph at lines 160--161
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (134.98813pt too wide) in paragraph at lines 169--170
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (185.38864pt too wide) in paragraph at lines 170--171
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+[22]
+Overfull \hbox (314.98996pt too wide) in paragraph at lines 187--188
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (329.3901pt too wide) in paragraph at lines 191--192
+[][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (62.9874pt too wide) in paragraph at lines 199--201
+[][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (127.78806pt too wide) in paragraph at lines 204--205
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (5.38681pt too wide) in paragraph at lines 205--206
+[][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (12.58688pt too wide) in paragraph at lines 206--207
+[][][][][][][][][][][][][][][] 
+ []
+
+[23]
+Overfull \hbox (142.1882pt too wide) in paragraph at lines 210--211
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (314.98996pt too wide) in paragraph at lines 215--216
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][]
+ []
+
+
+Overfull \hbox (278.9896pt too wide) in paragraph at lines 216--218
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
+ []
+
+
+Overfull \hbox (127.78806pt too wide) in paragraph at lines 220--222
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (595.79282pt too wide) in paragraph at lines 222--224
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (322.19003pt too wide) in paragraph at lines 226--227
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+
+ []
+
+
+Overfull \hbox (271.78952pt too wide) in paragraph at lines 227--229
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (242.98923pt too wide) in paragraph at lines 230--231
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+
+ []
+
+
+Overfull \hbox (437.3912pt too wide) in paragraph at lines 237--238
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (379.79062pt too wide) in paragraph at lines 238--240
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+][][][][] 
+ []
+
 )
-<data/b2.pdf, id=330, 597.50829pt x 845.0471pt>
+<data/b2.pdf, id=564, 597.50829pt x 845.0471pt>
 File: data/b2.pdf Graphic file (type pdf)
 <use data/b2.pdf>
 Package pdftex.def Info: data/b2.pdf  used on input line 276.
@@ -1867,9 +2103,7 @@ Overfull \hbox (7.11238pt too wide) in paragraph at lines 276--277
 [][] 
  []
 
-[18
-
-] [19 <./data/b2.pdf>]
+[24] [25] [26 <./data/b2.pdf>]
 \openout2 = `appendix/bibliography.aux'.
 
  (./appendix/bibliography.tex
@@ -1881,20 +2115,20 @@ AED: lastpage setting LastPage
 (./preface/listoftables.aux) (./preface/lstlistoflistings.aux)
 (./appendix/bibliography.aux))
 Package rerunfilecheck Info: File `SSS_Laborbericht.out' has not changed.
-(rerunfilecheck)             Checksum: 35606BB9DB3892BA1B5BE074D8F62406;4195.
+(rerunfilecheck)             Checksum: 5839EAB28D1463621C02A0130E6438C9;4660.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 40000 strings out of 479497
- 860303 string characters out of 5876370
- 1415203 words of memory out of 5000000
- 56065 multiletter control sequences out of 15000+600000
- 576797 words of font info for 94 fonts, out of 8000000 for 9000
+ 40317 strings out of 479497
+ 865135 string characters out of 5876370
+ 1464796 words of memory out of 5000000
+ 56151 multiletter control sequences out of 15000+600000
+ 577130 words of font info for 95 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 94i,12n,107p,712b,1239s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 94i,12n,107p,712b,2051s stack positions out of 5000i,500n,10000p,200000b,80000s
 {c:/texlive/2020/texmf-dist/fonts/enc/dvips/base/8r.enc}<c:/texlive/2020/texm
 f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2020/texmf-dist/fo
 nts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2020/texmf-dist/fonts/type1
@@ -1904,10 +2138,10 @@ b><c:/texlive/2020/texmf-dist/fonts/type1/urw/symbol/usyr.pfb><c:/texlive/2020/
 texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2020/texmf-dist/fonts/t
 ype1/urw/times/utmr8a.pfb><c:/texlive/2020/texmf-dist/fonts/type1/urw/times/utm
 ri8a.pfb>
-Output written on SSS_Laborbericht.pdf (26 pages, 9987994 bytes).
+Output written on SSS_Laborbericht.pdf (33 pages, 10021361 bytes).
 PDF statistics:
- 403 PDF objects out of 1000 (max. 8388607)
- 346 compressed objects within 4 object streams
- 96 named destinations out of 1000 (max. 500000)
- 287 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 720 PDF objects out of 1000 (max. 8388607)
+ 653 compressed objects within 7 object streams
+ 326 named destinations out of 1000 (max. 500000)
+ 311 words of extra memory for PDF output out of 10000 (max. 10000000)
 

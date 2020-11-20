@@ -50,14 +50,14 @@ def takeMultiplePictures(name, bild_anzahl):
 
 #### Messung 1: Grauwertkeil ####
 def readGrauwertKeil():
-    grayImage = cv2.imread(cv2.samples.findFile(grauwertkeil), cv2.IMREAD_GRAYSCALE)
+    grayImage = cv2.imread(cv2.samples.findFile("media\ " + grauwertkeil), cv2.IMREAD_GRAYSCALE)
     # TODO: Change sizes
     grayValues = []
-    grayValues.append(grayImage[0:100, 0:100])
-    grayValues.append(grayImage[0:100, 0:100])
-    grayValues.append(grayImage[0:100, 0:100])
-    grayValues.append(grayImage[0:100, 0:100])
-    grayValues.append(grayImage[0:100, 0:100])
+    grayValues.append(grayImage[0:105, 0:480])  # dunkelster bereich
+    grayValues.append(grayImage[110:255, 0:480])
+    grayValues.append(grayImage[260:400, 0:480])
+    grayValues.append(grayImage[410:545, 0:480])
+    grayValues.append(grayImage[555:640, 0:480]) # hellster bereich
     for index in range(len(grayValues)):
         print("Mittelwert von Grau%d: %f        Standardabweichung: %f" % (index, np.mean(grayValues[index]), np.std(grayValues[index])))
 
@@ -138,14 +138,14 @@ def kalibrierung(img):
 print("start programm:")
 # Teil 1    Grauwertkeil
 #takePictureAndWrite("grauwertkeil.png")
-# readGrauwertKeil()
+readGrauwertKeil()
 
 # Teil 2    Dunkelbild
 # takeMultiplePictures("dunkelbild", 10)
 # readDunkelbild()
 
 # Teil 3
-takeMultiplePictures("weissbild", 10)
+# takeMultiplePictures("weissbild", 10)
 # readWeissbild()
 
 # Teil 4

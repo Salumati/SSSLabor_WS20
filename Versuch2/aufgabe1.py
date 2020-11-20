@@ -9,17 +9,26 @@ grauwertkeil = "grauwertkeil.png"
 
 
 # General Methods
-def takePictureAndWrite(image_name):
-    # Our operations on the frame come here
-    ret, frame = cap.read()
+def takePictureAndWrite(image_name, multi = False):
+    cap = cv2.VideoCapture(0)
+    # loop for picture taking
+    while(True):
+        ret, frame = cap.read()
+        pic = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        cv2.imshow('frame', pic)
+        if (multi or cv2.waitKey(1) & 0xFF == ord('q')):
+            break;
+
+    # save picture and cam Settings
     cv2.imwrite(image_name, frame)
-    # When everything done, release the capture
     print("Took picture " + image_name)
-    # getCamSettings()
+    getCamSettings(cap)
+    # When everything done, release the capture and close window
     cap.release()
+    cv2.destroyAllWindows()
 
 
-def getCamSettings():
+def getCamSettings(cap):
     print("framewidth:" + str(cap.get(3)))
     print("frameheight:" + str(cap.get(4)))
     print("--------------------------------")
@@ -34,8 +43,9 @@ def getCamSettings():
 
 
 def takeMultiplePictures(name, bild_anzahl):
-    for index in range(bild_anzahl):
-        takePictureAndWrite(name + "_" + index + ".png")
+    takePictureAndWrite(name + "_" + str(0) + ".png")
+    for index in range(1, bild_anzahl):
+        takePictureAndWrite(name + "_" + str(index) + ".png", True)
 
 
 #### Messung 1: Grauwertkeil ####
@@ -125,21 +135,19 @@ def kalibrierung(img):
 #########################################################
 # Start
 #########################################################
-cap = cv2.VideoCapture(0)
-ret, frame = cap.read()
-
+print("start programm:")
 # Teil 1    Grauwertkeil
-# takePictureAndWrite("grauwertkeil.png")
-readGrauwertKeil()
+#takePictureAndWrite("grauwertkeil.png")
+# readGrauwertKeil()
 
 # Teil 2    Dunkelbild
 # takeMultiplePictures("dunkelbild", 10)
-readDunkelbild()
+# readDunkelbild()
 
 # Teil 3
-# takeMultiplePictures("weissbild", 10)
+takeMultiplePictures("weissbild", 10)
 # readWeissbild()
 
 # Teil 4
-k = cv2.waitKey(0)
+#k = cv2.waitKey(0)
 print("END")

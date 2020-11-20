@@ -90,11 +90,10 @@ def readDunkelbild():
     cv2.imwrite(dunkelMean, meanDunkelBild)
 
     # Kontrast maximieren:
-    # v = cv2.imread(dunkelMean)
-    # s = cv2.cvtColor(v, cv2.COLOR_BGR2GRAY)
-    # s = cv2.Laplacian(s, cv2.CV_16S, ksize=3)
-    # s = cv2.convertScaleAbs(s, alpha=255, beta=0)
-    s = cv2.equalizeHist(dunkelMean)
+    v = cv2.imread(dunkelMean)
+    s = cv2.cvtColor(v, cv2.COLOR_BGR2GRAY)
+    s = cv2.Laplacian(s, cv2.CV_16S, ksize=3)
+    s = cv2.convertScaleAbs(s, alpha=255, beta=0)
     cv2.imshow('Dunkel Kontrast maximiert', dunkelMean)
 
     ##cv2.imshow('Original Image', meanDunkelBild)

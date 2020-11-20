@@ -3,9 +3,11 @@ import numpy as np
 import cv2
 import time
 
-dunkelMean = "dunkelMittel.png"
-weissMean = "weissMittel.png"
+dunkelMean = "dunkelMean.png"
+weissMean = "weissMean.png"
 grauwertkeil = "grauwertkeil.png"
+
+
 # General Methods
 def takePictureAndWrite(image_name):
     # Our operations on the frame come here
@@ -48,41 +50,38 @@ def readGrauwertKeil():
     grayValues.append(grayImage[0:100, 0:100])
     for index in range(len(grayValues)):
         print("Mittelwert von Grau%d: %f        Standardabweichung: %f" % (index, np.mean(grayValues[index]), np.std(grayValues[index])))
-    # k = cv2.waitKey(0)
 
 
 #### Messung 2: Dunkelbild ####
-
 def readDunkelbild():
     darkArray = []
     # Bilder einlesen:
     for n in range(10):
         # Dunkelbilder einlesen und zu graubildern machen
-        img = cv2.imread("dunkelbild_" + str(n) + ".png", cv2.IMREAD_GRAYSCALE)
+        img = cv2.imread("dunkelbilder/dunkelbild_" + str(n) + ".png", cv2.IMREAD_GRAYSCALE)
         # Dunkelbilderwerte in double umwandeln und in darkArray speichern.
-        darkArray.append(np.float32(img))
-        # cv2.imshow('frame', img)
 
     # pixelweise Mittelwert berechnen:
     meanDunkelBild = np.mean(darkArray, axis=0)
-    #cv2.imwrite(dunkelMean, meanDunkelBild)
+    cv2.imwrite(dunkelMean, meanDunkelBild)
 
-
-    v = cv2.imread(cv2.samples.findFile("dunkelbild_0000.png"))
-
+    # Kontrast maximieren:
+    v = cv2.imread(dunkelMean)
     s = cv2.cvtColor(v, cv2.COLOR_BGR2GRAY)
     s = cv2.Laplacian(s, cv2.CV_16S, ksize=3)
 
     s = cv2.convertScaleAbs(s, alpha=255, beta=0)
-    cv2.imshow('nier', s)
+    cv2.imshow('Dunkel Kontrast maximiert', s)
 
     ##cv2.imshow('Original Image', meanDunkelBild)
     ##cv2.imshow('New Image', new_image)
+    cv2.imwrite("dunkelContrastMax.png", s)
 
 
 def kalibrierungDunkel(img):
+    # Ziehe Dunkelbild von zu korrigierenden Bild img ab.
     dunkel = cv2.imread(dunkelMean, cv2.IMREAD_GRAYSCALE)
-    cv2.imwrite("dunkelKalibrierung.png", np.subtract(img, dunkel))
+    cv2.imwrite("dunkelSubtrahiert.png", np.subtract(img, dunkel))
 
 
 #### Messung 3: Weissbild ####
@@ -90,21 +89,37 @@ def readWeissbild():
     weissArray = []
     # Bilder einlesen:
     for index in range(10):
-        image = cv2.cvtColor(cv2.imread("weissbild_" + str(index) + ".png"), cv2.IMREAD_GRAYSCALE)
+        image = cv2.imread("weissbilder/weissbild_" + str(index) + ".png", cv2.IMREAD_GRAYSCALE)
         weissArray.append(np.float32(image))
 
     meanWeissBild = np.mean(weissArray, axis=0)
-    meanDunkelBild = cv2.cvtColor(cv2.imread(dunkelMean), cv2.IMREAD_GRAYSCALE)
-    imageSubtracted = meanWeissBild -meanDunkelBild
-    # TODO: Kontrast maximal darstellen
-    cv2.imwrite('weissBildMinusGraubild.png', imageSubtracted)
+    cv2.imwrite(weissMean, meanWeissBild)
+    meanDunkelBild = cv2.imread(dunkelMean)
+    imageSubtracted = meanWeissBild - meanDunkelBild
+    cv2.imwrite('weissBildMinusDunkelbild.png', imageSubtracted)
 
 
-def kalibrierung(eingangsBild):
+def kalibrierung(img):
+    # Ziehe Dunkelbild von zu korrigierenden Bild img ab.
+    dunkel = cv2.imread(dunkelMean, cv2.IMREAD_GRAYSCALE)
+    cv2.imwrite("dunkelSubtrahiert.png", np.subtract(img, dunkel))
+
+
+    # Weisbild einlesen:
+    weisBild = np.float32(cv2.imread(weissMean, cv2.IMREAD_GRAYSCALE))
+
+    norm_image = cv2.normalize(weisBild, None, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_32F)
+
+
+    #
+
+    # Ziehe Dunkelbild von zu korrigierenden Bild img ab.
+    dunkel = cv2.imread(dunkelMean, cv2.IMREAD_GRAYSCALE)
+    imgKor = np.subtract(img, dunkel)
     print()
 
-#### Messung 4: Pixelfehler ####
 
+#### Messung 4: Pixelfehler ####
 
 
 #########################################################
@@ -114,7 +129,7 @@ cap = cv2.VideoCapture(0)
 ret, frame = cap.read()
 
 # Teil 1    Grauwertkeil
-#takePictureAndWrite("grauwertkeil.png")
+# takePictureAndWrite("grauwertkeil.png")
 readGrauwertKeil()
 
 # Teil 2    Dunkelbild
@@ -123,7 +138,7 @@ readDunkelbild()
 
 # Teil 3
 # takeMultiplePictures("weissbild", 10)
-readWeissbild()
+# readWeissbild()
 
 # Teil 4
 k = cv2.waitKey(0)

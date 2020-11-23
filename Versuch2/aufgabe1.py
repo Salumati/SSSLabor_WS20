@@ -140,6 +140,15 @@ def kalibrierung(img):
     imgKor = imgKor / norm_image
     cv2.imwrite("media/grauWertKorrektur.png", imgKor)
 
+    grayValues = []
+    grayValues.append(imgKor[0:480, 0:100])  # dunkelster bereich
+    grayValues.append(imgKor[0:480, 110:255])
+    grayValues.append(imgKor[0:480, 260:405])
+    grayValues.append(imgKor[0:480, 410:545])
+    grayValues.append(imgKor[0:480, 555:640])  # hellster bereich
+    for index in range(len(grayValues)):
+        print("Mittelwert von Grau Kalibriert%d: %f        Standardabweichung: %f" % (index, np.mean(grayValues[index]), np.std(grayValues[index])))
+
 
 #########################################################
 # Start

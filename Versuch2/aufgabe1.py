@@ -138,7 +138,7 @@ def kalibrierung(img):
 print("start programm:")
 # Teil 1    Grauwertkeil
 #takePictureAndWrite("grauwertkeil.png")
-# readGrauwertKeil()
+readGrauwertKeil()
 
 # Teil 2    Dunkelbild
 # takeMultiplePictures("dunkelbild", 10)

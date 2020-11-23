@@ -80,9 +80,7 @@ def readDunkelbild():
     # Bilder einlesen:
     for n in range(10):
         # Dunkelbilder einlesen und zu graubildern machen
-        img = cv2.imread("media/dunkelbilder/dunkelbild_" + str(n) + ".png", cv2.IMREAD_GRAYSCALE)
-        # Dunkelbilderwerte in double umwandeln und in darkArray speichern.
-        darkArray.append(np.float32(img))
+        darkArray.append(np.float32(cv2.imread("media/dunkelbilder/dunkelbild_" + str(n) + ".png", cv2.IMREAD_GRAYSCALE)))
 
     # pixelweise Mittelwert berechnen:
     meanDunkelBild = np.mean(darkArray, axis=0)
@@ -90,18 +88,10 @@ def readDunkelbild():
     cv2.imwrite(dunkelMean, meanDunkelBild)
 
     # Kontrast maximieren:
-    v = cv2.imread(dunkelMean)
-    s = cv2.cvtColor(v, cv2.COLOR_BGR2GRAY)
-    s = cv2.Laplacian(s, cv2.CV_16S, ksize=3)
-    s = cv2.convertScaleAbs(s, alpha=255, beta=0)
-    # cv2.imshow('Dunkel Kontrast maximiert', s)
+    v = np.float32(cv2.imread(dunkelMean))
+    v = v - np.min(v)
+    s = v * (255 / np.max(v))
     cv2.imwrite("media/dunkelContrastMax.png", s)
-
-
-def kalibrierungDunkel(img):
-    # Ziehe Dunkelbild von zu korrigierenden Bild img ab.
-    dunkel = cv2.imread(dunkelMean, cv2.IMREAD_GRAYSCALE)
-    cv2.imwrite("media/dunkelSubtrahiert.png", np.subtract(img, dunkel))
 
 
 #
@@ -118,14 +108,13 @@ def readWeissbild():
     cv2.imwrite(weissMean, meanWeissBild)
 
     # Kontrast maximieren:
-    v = cv2.imread(weissMean)
-    s = cv2.cvtColor(v, cv2.COLOR_BGR2GRAY)
-    s = cv2.Laplacian(s, cv2.CV_16S, ksize=3)
-    s = cv2.convertScaleAbs(s, alpha=255, beta=0)
-    # cv2.imshow('Weiss Kontrast maximiert', s)
+    v = np.float32(cv2.imread(weissMean))
+    v = v - np.min(v)
+    s = v * (255 / np.max(v))
+
     cv2.imwrite("media/weissContrastMax.png", s)
 
-    meanDunkelBild = cv2.imread(dunkelMean, cv2.IMREAD_GRAYSCALE)
+    meanDunkelBild = np.float32(cv2.imread(dunkelMean, cv2.IMREAD_GRAYSCALE))
     imageSubtracted = meanWeissBild - meanDunkelBild
     cv2.imwrite('media/weissBildMinusDunkelbild.png', imageSubtracted)
 
@@ -139,15 +128,16 @@ def kalibrierung(img):
 
     # Weisbild Teil
     # Weisbild einlesen:
-    weisBild = np.float32(cv2.imread(weissMean, cv2.IMREAD_GRAYSCALE))
+    weissBild = np.float32(cv2.imread(weissMean, cv2.IMREAD_GRAYSCALE))
 
-    norm_image = cv2.normalize(weisBild, None, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_32F)
+    mittelwertWeissbild = np.mean(weissBild)
+    norm_image = weissBild / mittelwertWeissbild
+
     # cv2.imshow('Weiss normiert', norm_image)
     cv2.imwrite("media/weiss_normiert.png", norm_image)
 
     # Dividiere korrigiertes bild durch  WeißbildNorm
     imgKor = imgKor / norm_image
-    # cv2.imshow('Weiss divide',imgKor)
     cv2.imwrite("media/grauWertKorrektur.png", imgKor)
 
 

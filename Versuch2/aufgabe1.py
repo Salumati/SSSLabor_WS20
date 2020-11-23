@@ -1,14 +1,15 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 import cv2
-import time
 
 dunkelMean = "media/dunkelMean.png"
 weissMean = "media/weissMean.png"
 grauwertkeil = "media/grauwertkeil/grauwertkeil.png"
 
 
+#
 # General Methods
+#
 def takePictureAndWrite(image_name, multi=False):
     cap = cv2.VideoCapture(0)
     # loop for picture taking
@@ -48,7 +49,9 @@ def takeMultiplePictures(name, bild_anzahl):
         takePictureAndWrite(name + "_" + str(index) + ".png", True)
 
 
-#### Messung 1: Grauwertkeil ####
+#
+# Messung 1: Grauwertkeil
+#
 def readGrauwertKeil(img=grauwertkeil):
     grayImage = cv2.imread(img, cv2.IMREAD_GRAYSCALE)
     # framewidth:640.0
@@ -59,11 +62,6 @@ def readGrauwertKeil(img=grauwertkeil):
     grayValues.append(grayImage[0:480, 260:405])
     grayValues.append(grayImage[0:480, 410:545])
     grayValues.append(grayImage[0:480, 555:640])  # hellster bereich
-    # cv2.imshow('schwarz', grayValues[0])
-    # cv2.imshow('dunkel grau', grayValues[1])
-    # cv2.imshow('grau', grayValues[2])
-    # cv2.imshow('hellgrau', grayValues[3])
-    # cv2.imshow('weiss', grayValues[4])
     cv2.imwrite('media/grauwertkeil/schwarz.png', grayValues[0])
     cv2.imwrite('media/grauwertkeil/dunkel_grau.png', grayValues[1])
     cv2.imwrite('media/grauwertkeil/grau.png', grayValues[2])
@@ -74,7 +72,9 @@ def readGrauwertKeil(img=grauwertkeil):
         print("Mittelwert von Grau%d: %f        Standardabweichung: %f" % (index, np.mean(grayValues[index]), np.std(grayValues[index])))
 
 
-#### Messung 2: Dunkelbild ####
+#
+# Messung 2: Dunkelbild
+#
 def readDunkelbild():
     darkArray = []
     # Bilder einlesen:
@@ -94,10 +94,7 @@ def readDunkelbild():
     s = cv2.cvtColor(v, cv2.COLOR_BGR2GRAY)
     s = cv2.Laplacian(s, cv2.CV_16S, ksize=3)
     s = cv2.convertScaleAbs(s, alpha=255, beta=0)
-    cv2.imshow('Dunkel Kontrast maximiert', dunkelMean)
-
-    ##cv2.imshow('Original Image', meanDunkelBild)
-    ##cv2.imshow('New Image', new_image)
+    # cv2.imshow('Dunkel Kontrast maximiert', s)
     cv2.imwrite("media/dunkelContrastMax.png", s)
 
 
@@ -107,7 +104,9 @@ def kalibrierungDunkel(img):
     cv2.imwrite("media/dunkelSubtrahiert.png", np.subtract(img, dunkel))
 
 
-#### Messung 3: Weissbild ####
+#
+# Messung 3: Weissbild
+#
 def readWeissbild():
     weissArray = []
     # Bilder einlesen:
@@ -123,7 +122,7 @@ def readWeissbild():
     s = cv2.cvtColor(v, cv2.COLOR_BGR2GRAY)
     s = cv2.Laplacian(s, cv2.CV_16S, ksize=3)
     s = cv2.convertScaleAbs(s, alpha=255, beta=0)
-    cv2.imshow('Weiss Kontrast maximiert', s)
+    # cv2.imshow('Weiss Kontrast maximiert', s)
     cv2.imwrite("media/weissContrastMax.png", s)
 
     meanDunkelBild = cv2.imread(dunkelMean, cv2.IMREAD_GRAYSCALE)
@@ -152,28 +151,22 @@ def kalibrierung(img):
     cv2.imwrite("media/grauWertKorrektur.png", imgKor)
 
 
-#### Messung 4: Pixelfehler ####
-
-
 #########################################################
 # Start
 #########################################################
 print("start programm:")
 # Teil 1    Grauwertkeil
-#### takePictureAndWrite("grauwertkeil.png")
-# readGrauwertKeil()
+# takePictureAndWrite("grauwertkeil.png")
+readGrauwertKeil()
 
 # Teil 2    Dunkelbild
-#### takeMultiplePictures("dunkelbild", 10)
-# readDunkelbild()
+# takeMultiplePictures("dunkelbild", 10)
+readDunkelbild()
 
 # Teil 3
-#### takeMultiplePictures("weissbild", 10)
-# readWeissbild()
+# takeMultiplePictures("weissbild", 10)
+readWeissbild()
 
-# kalibrierung(np.float32(cv2.imread('media/grauwertkeil/grauwertkeil.png', cv2.IMREAD_GRAYSCALE)))
-
-# Teil 4
-# grauwertkeil("media/grauWertKorrektur.png")
+kalibrierung(np.float32(cv2.imread('media/grauwertkeil/grauwertkeil.png', cv2.IMREAD_GRAYSCALE)))
 
 print("END")

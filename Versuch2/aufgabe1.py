@@ -72,7 +72,9 @@ def readGrauwertKeil(img=grauwertkeil):
     grayMeans = np.zeros(5)
     for index in range(len(grayValues)):
         grayMeans[index] = np.mean(grayValues[index])
-        print("Mittelwert von Grau%d: %f        Standardabweichung: %f" % (index, grayMeans[index], np.std(grayValues[index])))
+        print("Mittelwert von Grau%d: %f        Standardabweichung: %f"
+              % (index, grayMeans[index],
+                 np.std(grayValues[index])))
 
     plt.plot([0, 1, 2, 3, 4], grayMeans)
     plt.xlabel("Graustufe")
@@ -88,7 +90,12 @@ def readDunkelbild():
     # Bilder einlesen:
     for n in range(10):
         # Dunkelbilder einlesen und zu graubildern machen
-        darkArray.append(np.float32(cv2.imread("media/dunkelbilder/dunkelbild_" + str(n) + ".png", cv2.IMREAD_GRAYSCALE)))
+        darkArray.\
+            append(
+            np.float32(
+                cv2.imread("media/dunkelbilder/dunkelbild_"
+                                  + str(n) + ".png",
+                                  cv2.IMREAD_GRAYSCALE)))
 
     # pixelweise Mittelwert berechnen:
     meanDunkelBild = np.mean(darkArray, axis=0)
@@ -109,7 +116,8 @@ def readWeissbild():
     weissArray = []
     # Bilder einlesen:
     for index in range(10):
-        image = cv2.imread("media/weissbilder/weissbild_" + str(index) + ".png", cv2.IMREAD_GRAYSCALE)
+        image = cv2.imread("media/weissbilder/weissbild_" +
+                           str(index) + ".png", cv2.IMREAD_GRAYSCALE)
         weissArray.append(np.float32(image))
 
     meanWeissBild = np.mean(weissArray, axis=0)
@@ -122,7 +130,8 @@ def readWeissbild():
 
     cv2.imwrite("media/weissContrastMax.png", s)
 
-    meanDunkelBild = np.float32(cv2.imread(dunkelMean, cv2.IMREAD_GRAYSCALE))
+    meanDunkelBild = np.float32(
+        cv2.imread(dunkelMean, cv2.IMREAD_GRAYSCALE))
     imageSubtracted = meanWeissBild - meanDunkelBild
     cv2.imwrite('media/weissBildMinusDunkelbild.png', imageSubtracted)
 
@@ -130,13 +139,15 @@ def readWeissbild():
 def kalibrierung(img):
     # Dunkelbild Teil:
     # Ziehe Dunkelbild von zu korrigierenden Bild img ab.
-    dunkel = np.float32(cv2.imread(dunkelMean, cv2.IMREAD_GRAYSCALE))
+    dunkel = np.float32(cv2.imread(dunkelMean,
+                                   cv2.IMREAD_GRAYSCALE))
     imgKor = np.subtract(img, dunkel)
     cv2.imwrite("media/dunkelSubtrahiert.png", imgKor)
 
     # Weisbild Teil
     # Weisbild einlesen:
-    weissBild = np.float32(cv2.imread(weissMean, cv2.IMREAD_GRAYSCALE))
+    weissBild = np.float32(cv2.imread(weissMean,
+                                      cv2.IMREAD_GRAYSCALE))
 
     mittelwertWeissbild = np.mean(weissBild)
     norm_image = weissBild / mittelwertWeissbild
@@ -144,7 +155,7 @@ def kalibrierung(img):
     # cv2.imshow('Weiss normiert', norm_image)
     cv2.imwrite("media/weiss_normiert.png", norm_image)
 
-    # Dividiere korrigiertes bild durch  WeißbildNorm
+    # Dividiere korrigiertes bild durch  WeissbildNorm
     imgKor = imgKor / norm_image
     cv2.imwrite("media/grauWertKorrektur.png", imgKor)
 
@@ -167,6 +178,11 @@ print("start programm:")
 # takeMultiplePictures("weissbild", 10)
 # readWeissbild()
 
-#kalibrierung(np.float32(cv2.imread('media/grauwertkeil/grauwertkeil.png', cv2.IMREAD_GRAYSCALE)))
+''' 
+kalibrierung(
+    np.float32(
+        cv2.imread('media/grauwertkeil/grauwertkeil.png',
+                   cv2.IMREAD_GRAYSCALE)))
+                   '''
 
 print("END")

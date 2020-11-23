@@ -147,16 +147,16 @@ def kalibrierung(img):
 print("start programm:")
 # Teil 1    Grauwertkeil
 # takePictureAndWrite("grauwertkeil.png")
-readGrauwertKeil()
+#readGrauwertKeil()
 
 # Teil 2    Dunkelbild
 # takeMultiplePictures("dunkelbild", 10)
-readDunkelbild()
+#readDunkelbild()
 
 # Teil 3
 # takeMultiplePictures("weissbild", 10)
 readWeissbild()
 
-kalibrierung(np.float32(cv2.imread('media/grauwertkeil/grauwertkeil.png', cv2.IMREAD_GRAYSCALE)))
+#kalibrierung(np.float32(cv2.imread('media/grauwertkeil/grauwertkeil.png', cv2.IMREAD_GRAYSCALE)))
 
 print("END")

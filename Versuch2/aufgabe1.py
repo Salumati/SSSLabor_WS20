@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 import cv2
+import matplotlib.pyplot as plt
 
 dunkelMean = "media/dunkelMean.png"
 weissMean = "media/weissMean.png"
@@ -68,9 +69,16 @@ def readGrauwertKeil(img=grauwertkeil):
     cv2.imwrite('media/grauwertkeil/grau_hell.png', grayValues[3])
     cv2.imwrite('media/grauwertkeil/weiss.png', grayValues[4])
 
+    grayMeans = np.zeros(5)
     for index in range(len(grayValues)):
-        print("Mittelwert von Grau%d: %f        Standardabweichung: %f" % (index, np.mean(grayValues[index]), np.std(grayValues[index])))
+        grayMeans[index] = np.mean(grayValues[index])
+        print("Mittelwert von Grau%d: %f        Standardabweichung: %f" % (index, grayMeans[index], np.std(grayValues[index])))
 
+    plt.plot([0, 1, 2, 3, 4], grayMeans)
+    plt.xlabel("Graustufe")
+    plt.ylabel("Pixelwert")
+    plt.title(img)
+    plt.show()
 
 #
 # Messung 2: Dunkelbild
@@ -140,6 +148,8 @@ def kalibrierung(img):
     imgKor = imgKor / norm_image
     cv2.imwrite("media/grauWertKorrektur.png", imgKor)
 
+    readGrauwertKeil("media/grauWertKorrektur.png")
+
 
 #########################################################
 # Start
@@ -151,11 +161,11 @@ print("start programm:")
 
 # Teil 2    Dunkelbild
 # takeMultiplePictures("dunkelbild", 10)
-#readDunkelbild()
+# readDunkelbild()
 
 # Teil 3
 # takeMultiplePictures("weissbild", 10)
-readWeissbild()
+# readWeissbild()
 
 #kalibrierung(np.float32(cv2.imread('media/grauwertkeil/grauwertkeil.png', cv2.IMREAD_GRAYSCALE)))
 

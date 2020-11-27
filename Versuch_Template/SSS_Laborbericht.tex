@@ -81,9 +81,6 @@
 % package provides a way to compile sections of a document using the same preamble as the main document
 \usepackage{subfiles}
 
-% allows code presentation
-\usepackage{listings}
-
 % driver-independent color extension - used by listings,tabularx
 \usepackage[usenames,dvipsnames,table,xcdraw]{xcolor}
 
@@ -224,6 +221,14 @@
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \pagestyle{default}
+%
+% CHAPTER Einleitung
+%
+\chapter{Einleitung}
+\label{chap:EINL}
+
+\cite{Franz2016n}
+\cite{Franz2016e}
 
 %
 % CHAPTER Versuch 1
@@ -269,14 +274,17 @@
 \section{Quellcode}
 \label{chap:APPENDIX_SOURCECODE}
 
-
 \subsection{Quellcode Versuch 1}
 \label{chap:APPENDIX_SOURCECODE_V1}
 
+\subsection{Quellcode Versuch 2}
+\label{chap:APPENDIX_SOURCECODE_V2}
 
-\lstinputlisting[language=Python]{aufgabe1.py}
+\subsection{Quellcode Versuch 3}
+\label{chap:APPENDIX_SOURCECODE_V3}
 
-\include{chapters/code.txt}
+\subsection{Quellcode Versuch 4}
+\label{chap:APPENDIX_SOURCECODE_V4}
 
 
 \section{Messergebnisse}

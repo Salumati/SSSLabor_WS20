@@ -14,12 +14,12 @@ grauwertkeil = "media/grauwertkeil/grauwertkeil.png"
 def takePictureAndWrite(image_name, multi=False):
     cap = cv2.VideoCapture(0)
     # loop for picture taking
-    while (True):
+    while(True):
         ret, frame = cap.read()
         pic = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         cv2.imshow('frame', pic)
-        if multi or cv2.waitKey(1) & 0xFF == ord('q'):
-            break
+        if (multi or cv2.waitKey(1) & 0xFF == ord('q')):
+            break;
 
     # save picture and cam Settings
     cv2.imwrite(image_name, frame)
@@ -168,7 +168,7 @@ def kalibrierung(img):
 print("start programm:")
 # Teil 1    Grauwertkeil
 # takePictureAndWrite("grauwertkeil.png")
-#readGrauwertKeil()
+# readGrauwertKeil()
 
 # Teil 2    Dunkelbild
 # takeMultiplePictures("dunkelbild", 10)

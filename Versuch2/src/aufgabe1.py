@@ -39,7 +39,6 @@ def takeMultiplePictures(name, bild_anzahl):
 #### Messung 1: Grauwertkeil ####
 def readGrauwertKeil():
     grayImage = cv2.imread(cv2.samples.findFile(grauwertkeil), cv2.IMREAD_GRAYSCALE)
-    # TODO: Change sizes
     grayValues = []
     grayValues.append(grayImage[0:100, 0:100])
     grayValues.append(grayImage[0:100, 0:100])

@@ -36,6 +36,7 @@ def get_rms( block ):
 
 
 class TapTester(object):
+
     def __init__(self):
         self.pa = pyaudio.PyAudio()
         self.stream = self.open_mic_stream()
@@ -60,7 +61,7 @@ class TapTester(object):
                     return device_index
 
             if device_index == None:
-                print( "Noprefeeredinputfound;usingdeafultinputdevice." )
+                print("No prefered input found; using default input device.")
                 return device_index
 
     def open_mic_stream(self):
@@ -88,12 +89,13 @@ class TapTester(object):
             return
         amplitude = get_rms(block)
 
+
         if amplitude > self.tap_threshold:
             # noisy block
             self.quietcount = 0
             self.noisycount += 1
             if self.noisycount > OVERSENSITIVE:
-                # tunr down the sensitivity
+                # turn down the sensitivity
                 self.tap_threshold *= 1.1
             else:
                 # quiet block.

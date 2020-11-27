@@ -12,3 +12,6 @@
 *.toc
 *.gz
 *.db
+
+# don't include all csv files
+*.csv

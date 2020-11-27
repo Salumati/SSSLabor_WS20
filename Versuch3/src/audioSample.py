@@ -4,6 +4,7 @@
 import pyaudio
 import numpy as np
 import matplotlib.pyplot as plt
+import csv
 
 FORMAT = pyaudio.paInt16
 SAMPLEFREQ = 44100
@@ -19,6 +20,15 @@ decoded = np.fromstring(data, 'Int16');
 stream.stop_stream()
 stream.close()
 p.terminate()
+
+a = np.asarray(decoded)
+np.savetxt("foo.csv", a, delimiter=",")
+
+print(data)
+print(decoded)
+
 print('done')
-plt.plot(decoded)
+data_file = np.genfromtxt("foo.csv")
+#file = open("foo.csv")
+plt.plot(data_file)
 plt.show()

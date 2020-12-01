@@ -15,3 +15,6 @@
 
 # don't include all csv files
 *.csv
+
+# parts from Versuch3 we don't need
+Fouriertransformierte.png

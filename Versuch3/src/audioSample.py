@@ -1,10 +1,8 @@
 # example from moodle, creates an audio signal and displays that signal in a plot
 # at least I think this is what it does...
-
 import pyaudio
 import numpy as np
 import matplotlib.pyplot as plt
-import csv
 
 FORMAT = pyaudio.paInt16
 SAMPLEFREQ = 44100
@@ -15,20 +13,16 @@ print('running')
 
 stream = p.open(format=FORMAT,channels=1, rate=SAMPLEFREQ, input=True, frames_per_buffer=FRAMESIZE)
 data = stream.read(NOFRAMES*FRAMESIZE)
-decoded = np.fromstring(data, 'Int16');
+decoded = np.fromstring(data, 'Int16')
 
 stream.stop_stream()
 stream.close()
 p.terminate()
 
 a = np.asarray(decoded)
-np.savetxt("foo.csv", a, delimiter=",")
-
-print(data)
-print(decoded)
+np.savetxt("data.csv", a, delimiter=",")
 
 print('done')
-data_file = np.genfromtxt("foo.csv")
-#file = open("foo.csv")
-plt.plot(data_file)
+
+plt.plot(data)
 plt.show()

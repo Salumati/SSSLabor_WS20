@@ -6,23 +6,24 @@ import math
 
 INITIAL_TAP_THRESHOLD = 0.010
 FORMAT = pyaudio.paInt16
-SHORT_NORMALIZE = (1.0/32768.0)
+SHORT_NORMALIZE = (1.0 / 32768.0)
 CHANNELS = 2
 RATE = 44100
 
 INPUT_BLOCK_TIME = 0.05
-INPUT_FRAMES_PER_BLOCK = int(RATE*INPUT_BLOCK_TIME)
+INPUT_FRAMES_PER_BLOCK = int(RATE * INPUT_BLOCK_TIME)
 # if we get this many noisy blocks in a row, increase thethreshold
-OVERSENSITIVE = 15.0/INPUT_BLOCK_TIME
+OVERSENSITIVE = 15.0 / INPUT_BLOCK_TIME
 # if we get this many quite blocks in a row, decrease thethreshold
-UNDERSENSITIVE = 120.0/INPUT_BLOCK_TIME
+UNDERSENSITIVE = 120.0 / INPUT_BLOCK_TIME
 # if th enoise was longer than this many blocks, it’s not a ’tap’
-MAX_TAP_BLOCKS = 0.15/INPUT_BLOCK_TIME
+MAX_TAP_BLOCKS = 0.15 / INPUT_BLOCK_TIME
 
-def get_rms( block ):
-# RMS amplitude is defined as the square root of the# mean over time of the square of the amplitude.# So we need to convert this string of bytes into# a string of 16-bit samples...# we will get one short out for each# two xhars in the string.
-    count = len(block)/2
-    format ="%dh"%(count)
+
+def get_rms(block):
+    # RMS amplitude is defined as the square root of the# mean over time of the square of the amplitude.# So we need to convert this string of bytes into# a string of 16-bit samples...# we will get one short out for each# two xhars in the string.
+    count = len(block) / 2
+    format = "%dh" % (count)
     shorts = struct.unpack(format, block)
     # iterate over the block
     sum_squares = 0.0
@@ -32,7 +33,7 @@ def get_rms( block ):
         n = sample * SHORT_NORMALIZE
         sum_squares += n * n
 
-        return math.sqrt( sum_squares / count)
+        return math.sqrt(sum_squares / count)
 
 
 class TapTester(object):
@@ -41,7 +42,7 @@ class TapTester(object):
         self.pa = pyaudio.PyAudio()
         self.stream = self.open_mic_stream()
         self.tap_threshold = INITIAL_TAP_THRESHOLD
-        self.noisycount = MAX_TAP_BLOCKS+1
+        self.noisycount = MAX_TAP_BLOCKS + 1
         self.quietcount = 0
         self.errorcount = 0
 
@@ -50,13 +51,13 @@ class TapTester(object):
 
     def find_input_device(self):
         device_index = None
-        for i in range( self.pa.get_device_count() ):
+        for i in range(self.pa.get_device_count()):
             devinfo = self.pa.get_device_info_by_index(i)
-            print( "Device%d:%s"%(i,devinfo["name"]) )
+            print("Device%d:%s" % (i, devinfo["name"]))
 
-            for keyword in ["mic","input"]:
+            for keyword in ["mic", "input"]:
                 if keyword in devinfo["name"].lower():
-                    print( "Foundaninput:device%d-%s"%(i,devinfo["name"]) )
+                    print("Foundaninput:device%d-%s" % (i, devinfo["name"]))
                     device_index = i
                     return device_index
 
@@ -66,17 +67,17 @@ class TapTester(object):
 
     def open_mic_stream(self):
         device_index = self.find_input_device()
-        stream = self.pa.open( format = FORMAT,
-                               channels = CHANNELS,
-                               rate = RATE,
-                               input = True,
-                               input_device_index = device_index,
-                               frames_per_buffer =
-                                INPUT_FRAMES_PER_BLOCK )
+        stream = self.pa.open(format=FORMAT,
+                              channels=CHANNELS,
+                              rate=RATE,
+                              input=True,
+                              input_device_index=device_index,
+                              frames_per_buffer=
+                              INPUT_FRAMES_PER_BLOCK)
         return stream
 
     def tapDetected(self):
-        print( "Tap!" )
+        print("Tap!")
 
     def listen(self):
         try:
@@ -84,11 +85,10 @@ class TapTester(object):
         except IOError as e:
             # dammit.
             self.errorcount += 1
-            print( "(%d)Errorrecording:%s"%(self.errorcount,e) )
+            print("(%d)Errorrecording:%s" % (self.errorcount, e))
             self.noisycount += 1
             return
         amplitude = get_rms(block)
-
 
         if amplitude > self.tap_threshold:
             # noisy block

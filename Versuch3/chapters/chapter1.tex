@@ -61,7 +61,7 @@ Das \textbf{Abtastintervall} ergibt sich aus:
 
 Das Abtastintervall ist also 0,000022676 s oder 0,022676 ms.
 
-\subparagraph*{Grundperiode und Grundfrequenz}
+\subsection*{Grundperiode und Grundfrequenz}
 
 Um die Grundfrequenz ermitteln zu können muss zu nächst die Grundperiode bekannt sein.
 Grundperiode: Zeitliche dauer bis sich die Schwingung wiederholt. Sie muss folglich aus den Plot abgelesen werden:
@@ -88,7 +88,22 @@ Sie ergibt sich aus:
 	\item t = Gemessener Zeitraum in s
 \end{itemize}
 
-Die  beträgt also 238,38 Hz.
+Die Grundfrequenz beträgt also 238,38 Hz.
+
+\subsection*{Fouriertransformation}
+
+Um nun zu dem gemessenen Signal das Spektrum zu ermitteln wird die Funktion fft von numpy angewandt.
+daraus ergibt sich folgendes Spektrum:
+
+\includegraphics[scale=0.5]{media/Fouriertransformierte.png}
 
 \section{Interpretation}
 \label{chap:VERSUCH_1_INTERPRETATION}
+
+
+\includegraphics[scale=0.5]{media/singleperiod.png}
+\label{fig: Einzelne Schwingung}
+\captionof{figure}{fig:Single}
+
+In der Abbildung \ ist sehr gut zu sehen dass sich die von uns zuvor berechnete Grundfrequenz
+bei ca. 238Hz befindet. Da es sich um ein periodisches Signal handelt sind die folgenden Harmonischen Schwingungen bei vielfachen von 238Hz zu sehen, welche jedoch auf Grund von Messungenauigkeiten und Rundungsfehlern etwas davon abweichen.

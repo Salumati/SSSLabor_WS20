@@ -1,4 +1,3 @@
-import pyaudio as audio
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -13,12 +12,9 @@ data = np.genfromtxt("../media/data.csv", delimiter=",", skip_header=50000)
 plt.title('Floete')
 plt.xlabel('Time')
 plt.ylabel('Voltage(V)')
-# plt.yticks(range(-14000, 16000, 2000))
-# plt.xticks(range(0, 500, 25))
 
-# plt.minorticks_on()
 plt.grid(which='major', linestyle='-', linewidth='0.5', color='black')
-#plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray')
+# plt.grid(which='minor', linestyle=':', linewidth='0.5', color='gray')
 
 # 15500 gesamt
 '''
@@ -47,40 +43,40 @@ M = 225280
 t = 0.00002267573696145127165  # in s
 #
 
-
 # 3. berechne mit der Funktion numpy.fft.fft()
 # die Fouriertransformierte des Signals und stelle sie graphisch dar
 
 
-fft = np.fft.fft(data[25000:25500])
-# fft = data[25000:25500]
-plt.title('Fouriertranformierte')
-plt.xlabel('Frequenz(Hz)')
+mulperiods = data[109:563]
+period = data[100:300]
+N = data.size
+Nhalf = int(data.size / 2)
+Nval = np.arange(0, 112640)
+fourier = np.fft.fft(data)
+absValues = np.abs(fourier[:Nhalf])
+freq = np.fft.fftfreq(N)
+
+"""
+plt.title('Spektrum')
+plt.xlabel('Frequenz in Hz')
 plt.ylabel('Amplitude')
-plt.grid(True)
-
-xData = [] #Real
-yData = [] #Imag
-
-for n in range(0, len(fft)):
-    yData.append((n / (len(fft) * t)))
-
-x = 500 * t
-xData = np.arange(0, x, t)
+plt.plot(Nval[:30000], absValues[:30000])
+plt.savefig('../media/Fouriertranformierte.png', dpi=900)
+"""
 
 
-plt.plot(xData, yData)
+plt.title('Mehrere Schwinungen')
+plt.xlabel('Zeit')
+plt.ylabel('Spannung in mv')
+plt.plot(mulperiods)
+plt.savefig('../media/multipleperiods.png', dpi=900)
 plt.show()
 
-#########################################
-
-
-# n = 0
-# for value in fft:
-#    spektrumX[n] = (n / (t * M))
-#    spektrumY[n] = fft[n]
-#    n = n + 1
-
-# plt.savefig('../media/Fouriertranformierte.png', dpi=900)
-# plt.plot(spektrumX, spektrumY)
-#plt.show()
+"""
+plt.title('Einzelne Schwingung')
+plt.xlabel('Zeit')
+plt.ylabel('Spannung in mv')
+plt.plot(period)
+plt.savefig('../media/singleperiod.png', dpi=900)
+plt.show()
+"""

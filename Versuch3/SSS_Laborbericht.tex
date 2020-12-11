@@ -1,4 +1,4 @@
-%---------------
+ %---------------
 %╔═╗╔═╗╔╦╗╦ ╦╔═╗
 %╚═╗║╣  ║ ║ ║╠═╝
 %╚═╝╚═╝ ╩ ╚═╝╩
@@ -153,8 +153,13 @@
 \newcommand{\strAuthorBEmail}{dominic.fellbaum@htwg-konstanz.de}
 %\newcommand{\strAuthorCEmail}{cauthor@htwg-konstanz.de}
 % Versuchsbeschreibung
-\newcommand{\strTopic}{VERSUCH NAME}
-\newcommand{\strAbstract}{Zusammenfassung etwa 100 Worte.}
+\newcommand{\strTopic}{Versuch 3 Fourieranalyse und Akustik}
+\newcommand{\strAbstract}{Im Versuch geht es um die Fourieranalyse eines akustischen Signals.
+Sinn ist es, ein praktisches Verständnis für die Fourierreihe und die Fourieranalyse zu erhalten, zudem soll der geübt werden wie man akustische Signale messen kann.
+Es wird spezifisch der Ton einer Klarinette aufgenommen. Das Signal des Tons wird in seinen Zeitbereich dargestellt ein repräsentativer Abschnitt des Signals wird gesucht und  dann fouriertransformiert, damit anschließend sein Frequenzbereich dargestellt werden kann. Für die Fouriertransformation werden die Funktionen aus der Numpy Bibliothek verwendet.
+
+Aufgrund der Corona Pandemie wird der zweite Versuch zur Messung des Frequenzgangs am Lautsprecher ausgelassen.
+}
 % hyperref customization
 \hypersetup{
 	pdftitle     = {\strTopic}, % title
@@ -221,14 +226,6 @@
 \pagenumbering{arabic}
 \setcounter{page}{1}
 \pagestyle{default}
-%
-% CHAPTER Einleitung
-%
-\chapter{Einleitung}
-\label{chap:EINL}
-
-\cite{Franz2016n}
-\cite{Franz2016e}
 
 %
 % CHAPTER Versuch 1
@@ -236,26 +233,6 @@
 
 \input{chapters/chapter1.tex}
 
-
-%
-% CHAPTER Versuch 2
-%
-
-\input{chapters/chapter2.tex}
-
-
-%
-% CHAPTER Versuch 3
-%
-
-\input{chapters/chapter3.tex}
-
-
-%
-% CHAPTER Versuch 4
-%
-
-\input{chapters/chapter4.tex}
 
 
 %
@@ -277,18 +254,16 @@
 \subsection{Quellcode Versuch 1}
 \label{chap:APPENDIX_SOURCECODE_V1}
 
-\subsection{Quellcode Versuch 2}
-\label{chap:APPENDIX_SOURCECODE_V2}
+\subsubsection*{Code für die Aufnahme (audioSample.py)}
 
-\subsection{Quellcode Versuch 3}
-\label{chap:APPENDIX_SOURCECODE_V3}
+\subsubsection*{Code für die Auswertung (aufgabe3.py)}
 
-\subsection{Quellcode Versuch 4}
-\label{chap:APPENDIX_SOURCECODE_V4}
-
+\include{chapters/code.txt}
 
 \section{Messergebnisse}
 \label{chap:APPENDIX_MEASUREMENT_SOURCE}
+
+\include{media/data.cv}
 
 %
 % Literaturverzeichnis

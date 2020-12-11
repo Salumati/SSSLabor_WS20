@@ -36,47 +36,59 @@ Die Werte auf der X-Achste stehen hierbei für Abtastpunke über die Zeit und si
 \section{Auswertung}
 \label{chap:VERSUCH_1_AUSWERTUNG}
 
+\subsection*{Randdaten}
+
 Vor Beginn der eigentlichen Auswertung werden erst  mal die Randdaten festgelegt. Das Signal wurde mittels des Beispielprogramms audioSample.py aufgenommen und abgespeichert. Dabei hat das Programm über einen Gesamtzeitraum von 225280 Frames gemessen und in dieser wurden 44100 Frames die Sekunde gemessen.
-Das bedeutet die \textbf{Abtastfrequenz} war 44100 Hz.
+Das bedeutet die \textbf{Signallänge} beträgt 225280 und die \textbf{Abtastfrequenz} beträgt 44100 Hz.
 Daraus lässt sich auch die Messdauer berechnen:
 \begin{equation}
-	M = \frac{N}{at} = \frac{225280}{44100 Hz} = 5,1084 s
+	L = \frac{M}{a} = \frac{225280}{44100 Hz} = 5,1084 s
 \end{equation}
 \begin{itemize}
-	\item M = Signallänge
-	\item N = Anzahl Framse = 225280
-	\item at = 
+	\item L = Signaldauer = 5,1084 s
+	\item M = Signallänge = 225280
+	\item a = Abtastfrequenz = 441000 Hz 
 \end{itemize}
 
-, daraus ergibt sich eine Messdauer von insgesamt 5,1084 s.
-Die Framezeit und somit das Abtastintervall ist 0,000022676 s oder 0,022676 ms.
-Abtastfrequenz ist 441000 Hz
+Das \textbf{Abtastintervall} ergibt sich aus:
 
+\begin{equation}
+	\Delta t = \frac{1}{a} = 0,000022676 s
+\end{equation}
+\begin{itemize}
+	\item $\Delta t$ = Abtastintervall
+\end{itemize}
 
-Zunächst werden die Grundperiode und die Grundfrequenz des Signals anhand des Plots ermittelt:
+Das Abtastintervall ist also 0,000022676 s oder 0,022676 ms.
 
+\subparagraph*{Grundperiode und Grundfrequenz}
+
+Um die Grundfrequenz ermitteln zu können muss zu nächst die Grundperiode bekannt sein.
 Grundperiode: Zeitliche dauer bis sich die Schwingung wiederholt. Sie muss folglich aus den Plot abgelesen werden:
 \includegraphics[scale=0.05]{media/Signal_Raster_Periode.png}
 
 An der Graphik lässt sich erkennen das $ Grundperiode = 225 - 40 = 185 $ ist.
-Dabei sei zu erwähnen das die 185 für die Anzahl von Abtastpunkten steht über die eine Periode dauert.
+Da es sich bei 185 um die Anzahl von Abtastpunkten handelt ist es noch nötig sie in sekunden umzurechnen:
 
-Die Frequenz ergibt sich aus:
 \begin{equation}
-	f = n / t
+	G = Abtastpunkte \ast \Delta t = 185 \ast 0,000022676 s
 \end{equation}
 \begin{itemize}
-	\item f = Frequenz in Hz
+	\item G = Grundperiode = 0,004195 s 
+\end{itemize}
+
+Nun lässt sich auch die Frequenz berechnen. 
+Sie ergibt sich aus:
+\begin{equation}
+	f =  \frac{c}{t} = \frac{1}{0,004195 s} = 238,38 Hz
+\end{equation}
+\begin{itemize}
+	\item f = Grundfrequenz in Hz 
 	\item n = Anzahl Schwingungen
 	\item t = Gemessener Zeitraum in s
 \end{itemize}
 
-
-
-
-nun wird die 
-
-
+Die  beträgt also 238,38 Hz.
 
 \section{Interpretation}
 \label{chap:VERSUCH_1_INTERPRETATION}

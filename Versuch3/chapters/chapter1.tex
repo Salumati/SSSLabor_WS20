@@ -16,8 +16,8 @@ Die Fourieranalyse ist ein essenzielle Methoden für die Signalverarbeitung. Sie
 \subsection*{Aufbau}
 
 \includegraphics[scale=0.4]{media/Versuchaufbau.png}
-\label{Abb:Aufbau}
-
+\label{fig:Aufbau}
+\captionof{figure}{fig:Aufbau}
 
 \subsection*{Messmittel}
 \begin{itemize}
@@ -29,7 +29,10 @@ Die Fourieranalyse ist ein essenzielle Methoden für die Signalverarbeitung. Sie
 \label{chap:VERSUCH_1_MESSWERTE}
 
 Zwei Schwinungen, aus den späteren abschnitten (die ersten 50.000 Werte wurden übersprungen, weil das Signal zu verworren war)
-\includegraphics[scale=0.05]{media/Signal_Raster.png}
+
+\includegraphics[scale=0.07]{media/Signal_Raster.png}
+\label{fig: Signal}
+\captionof{figure}{fig:Signal}
 
 Die Werte auf der X-Achste stehen hierbei für Abtastpunke über die Zeit und sind daher einheitslos.
 
@@ -65,7 +68,9 @@ Das Abtastintervall ist also 0,000022676 s oder 0,022676 ms.
 
 Um die Grundfrequenz ermitteln zu können muss zu nächst die Grundperiode bekannt sein.
 Grundperiode: Zeitliche dauer bis sich die Schwingung wiederholt. Sie muss folglich aus den Plot abgelesen werden:
-\includegraphics[scale=0.05]{media/Signal_Raster_Periode.png}
+\includegraphics[scale=0.1]{media/Signal_Raster_Periode.png}
+\label{fig: Signal mit Periode}
+\captionof{figure}{fig:Periode}
 
 An der Graphik lässt sich erkennen das $ Grundperiode = 225 - 40 = 185 $ ist.
 Da es sich bei 185 um die Anzahl von Abtastpunkten handelt ist es noch nötig sie in sekunden umzurechnen:
@@ -95,15 +100,17 @@ Die Grundfrequenz beträgt also 238,38 Hz.
 Um nun zu dem gemessenen Signal das Spektrum zu ermitteln wird die Funktion fft von numpy angewandt.
 daraus ergibt sich folgendes Spektrum:
 
-\includegraphics[scale=0.5]{media/Fouriertranformierte.png}
+\includegraphics[scale=0.8]{media/Fouriertranformierte.png}
+\label{fig: Fouriertransformierte}
+\captionof{figure}{fig:FFT}
 
 \section{Interpretation}
 \label{chap:VERSUCH_1_INTERPRETATION}
 
 
-\includegraphics[scale=0.5]{media/singleperiod.png}
+\includegraphics[scale=0.8]{media/singleperiod.png}
 \label{fig: Einzelne Schwingung}
 \captionof{figure}{fig:Single}
 
-In der Abbildung \ ist sehr gut zu sehen dass sich die von uns zuvor berechnete Grundfrequenz
+In der obigen Abbildung ist sehr gut zu sehen dass sich die von uns zuvor berechnete Grundfrequenz
 bei ca. 238Hz befindet. Da es sich um ein periodisches Signal handelt sind die folgenden Harmonischen Schwingungen bei vielfachen von 238Hz zu sehen, welche jedoch auf Grund von Messungenauigkeiten und Rundungsfehlern etwas davon abweichen.

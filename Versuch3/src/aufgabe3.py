@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 # 1. nehme konstanten Ton auf.
 # Der Ton sollte eine hoch genuge Amplitude haben
-# und sich gleichmäßig wiederholen
+# und sich gleichmaesig wiederholen
 
 
 # 2. stelle die Periode des Signals graphisch dar

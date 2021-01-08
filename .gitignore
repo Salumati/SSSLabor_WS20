@@ -16,5 +16,10 @@
 # don't include all csv files
 *.csv
 
+*.png
+
+# don't include testfiles
+test.py
+
 # parts from Versuch3 we don't need
 Fouriertransformierte.png

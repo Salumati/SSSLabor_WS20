@@ -1,14 +1,145 @@
 \chapter{Versuch 2}
-\label{chap:VERSUCH_2}
+\label{chap:VERSUCH-2}
+
 
 \section{Fragestellung, Messprinzip, Aufbau, Messmittel}
-\label{chap:VERSUCH_2_FRAGESTELLUNG}
+\label{chap:VERSUCH-2-FRAGESTELLUNG}
+
+\subsection*{Fragestellung}
+Im 2. Teil des Versuchs soll ein Spracherkenner gebaut werden, der vier verschiedene Worte erkennt. Dafür wird jedes Wort 5 mal aufgenommen,
+und ein Prototyp ausgerechnet indem von allen 5 die Spektren berechnet werden und anschließend der Mittelwert. Zum Vergleich der Prototypen mit einem
+anderen Signal wird der Korrelationskoeffizient nach Bravais-Pearson berechnet.
+
+\subsection*{Messprinzip, Aufbau und Messmittel}
+
+Wie in Versuch 1 (add link!)
+
 
 \section{Messwerte}
-\label{chap:VERSUCH_2_MESSWERTE}
+\label{chap:VERSUCH-2-MESSWERTE}
+
+Im folgenden sind die gesprochenen Wörter hoch, tief, links und rechts dargestellt in der aufgezählten Reihenfolge:
+
+\includegraphics[scale=1]{media/Sprachinput/Ref/hoch_Ref_0.png}
+\captionof{figure}{Zeitspektrum-Ref-hoch}
+
+\includegraphics[scale=1]{media/Sprachinput/Ref/tief_Ref_0.png}
+\captionof{figure}{Zeitspektrum-Ref-tief}
+
+
+\includegraphics[scale=1]{media/Sprachinput/Ref/links_Ref_0.png}
+\captionof{figure}{Zeitspektrum-Ref-links}
+
+
+\includegraphics[scale=1]{media/Sprachinput/Ref/rechts_Ref_0.png}
+\captionof{figure}{Zeitspektrum-Ref-rechts}
+
 
 \section{Auswertung}
-\label{chap:VERSUCH_2_AUSWERTUNG}
+\label{chap:VERSUCH-2-AUSWERTUNG}
+
+Für den Spracherkenner brauchen wir zunächst die Referenzspektren für die jeden der vier Befehle ”Hoch”, ”Tief”, ”Links” und ”Rechts”, wobei jedes Wort 5 mal aufgesagt wurde und vom selber Sprecher stammen.
+Dazu haben wir jeweils die Spektren der vier Wörter mit der Windowing Methode aus Aufgabe 1 berechnet und daraus das Referenzspektrum durch Mittelung aller 5 Spektren erhalten.
+Im folgenden sind die Referenz Spekten dargestellt in der aufgezählten Reihenfolge.
+
+\includegraphics[scale=1]{media/hoch_Windowing_Amplitudenspektrum_Mean.png}
+\captionof{figure}{Amplitudenspektrum-Ref-hoch}
+
+
+\includegraphics[scale=1]{media/tief_Windowing_Amplitudenspektrum_Mean.png}
+\captionof{figure}{Amplitudenspektrum-Ref-tief}
+
+
+\includegraphics[scale=1]{media/links_Windowing_Amplitudenspektrum_Mean.png}
+\captionof{figure}{Amplitudenspektrum-Ref-links}
+
+
+\includegraphics[scale=1]{media/rechts_Windowing_Amplitudenspektrum_Mean.png}
+\captionof{figure}{Amplitudenspektrum-Ref-rechts}
+
+
+
+Nachdem die Referenzspektren ermittelt wurden müssen sie mit Trainingssprektren verglichen werden, um zu erkennen wie gut die Worte erkannt werden.
+Hierzu nehmen zwei Sprecher, der ursprüngliche Sprecher und ein weiterer, nochmal fünf Aufnahmen pro Wort auf.
+Diese werden wieder mit der Windowing Methode in ihr Amplitudenspektrum zerlegt, allerdings wird dieses mal kein Mittelwert berechnet.
+
+Um nun die Spektren vergleichen zu können benötigen wir den Korrelationskoeffizienten nach Bravais-Pearson, welcher uns ein Ähnlichkeitsmaß für die Spektren liefert.
+Für den Korrelationskoeffizienten brauchen wir zuerst die Kovarianz:
+
+\begin{equation}
+	\sigma_fg = \frac{1}{n} \sum_{k =1}^n (f_k - \mu_f) * (g_k - \mu_g) 
+\end{equation}
+\begin{itemize}
+	\item $\sigma_fg $ = Kovarianz
+	\item f und g = die zu Vergleichenden Spektren
+	\item $\mu$ = Mittelwert des jeweiligen Spektrums
+\end{itemize}
+
+Aus der Kovarianz lässt sich nun der Korrelationskoeffizient berechnen:
+
+\begin{equation}
+	r_fg = \frac{\sigma_fg}{\sigma_f * \sigma_g}
+\end{equation}
+\begin{itemize}
+	\item $\sigma_f / \sigma_g$ = Standardabweichung vom jeweiligen Spektrum 
+\end{itemize}
+
+Wobei ein Koeffizient von 1 für ein identisches Spektrum steht, während ein Koeffizient von 0 für ein komplett unterschiedliches Spektrum steht.
+Der Spracherkenner ermittelt den Koeffizienten für jedes Referenzspektrum und interpretiert das Eingangssignal als das Wort mit der höchsten Korrelation.
+
+Um nun zu testen wie gut der Spracherkenner funktioniert werden alle Aufnahmen der beiden Testdatensätze vom Spracherkenner interpretiert und das Ergebnis überprüft.
+Folgende Tabelle stellt die Erkennungsrate und Fehlerrate dar:
+
+
+\begin{center}
+
+\begin{figure}[h]
+
+\begin{tabular}{|c|c|r|c|c|r|}
+Wort & erkannt & Erkennungsrate & nicht erkannt & Fehlerrate &  stattdessen erkannt als: \\ 
+
+\hline
+Hoch(P1) & 5 & 100 \% & 0 & 0 \% & - \\ 
+\hline
+Tief (P1) & 3 & 60 \% & 2 & 40 \% & rechts \\ 
+\hline
+Links (P1) & 1 & 20 \% & 4 & 80 \% & hoch \\ 
+\hline
+Rechts (P1) & 4 & 80 \% & 1 & 20 \% & links \\ 
+\hline
+gesammt (P1) & 13 & 65 \% & 7 & 35 \% & - \\ 
+\hline
+
+Hoch (P2) & 3 & 60 \% & 2 & 40 \% & Links  \\  
+\hline
+Tief (P2) & 5 & 100 \% & 0 & 0 \% & - \\ 
+\hline
+Links (P2) & 0 & 0 \% & 5 & 100 \% & Tief \\ 
+\hline
+Rechts (P2) & 0 & 0 \% & 5 & 100 \% & Hoch \\ 
+\hline
+gesammt (P2) & 8 & 40 \% & 12 & 60 \% & - \\ 
+\hline
+
+\end{tabular} 
+\label{Tab: Ergebnisse des SpracherkennerTests}
+\caption{Tab: Ergebnisse des Spracherkenner Tests}
+
+\end{figure}
+
+\end{center}
+
+P1 ist der Sprecher der auch das Referenzspektrum aufgenommen hat.
+
 
 \section{Interpretation}
 \label{chap:VERSUCH_2_INTERPRETATION}
+
+Es zeigt sich das der erstellte Spracherkenner recht ungenau ist, selbst beim originalsprecher wurden nicht alle Befehle korrekt erkannt.
+Grund hierfür könnte einerseits der geringe Datensatz für das Referenzspektrum sein, da es aus nur fünf Worten vom selben Sprecher erstellt wurde.
+Auch die Mikrophonqualität könnte mit einspielen, vor allem da beide Sprecher mit unterschiedlichen Mikrophonen aufnehmen mussten, wodurch verschiedene Fehlerquellen aufeinander stoßen.
+Zudem waren die Sprecher von unterschiedlichen geschlecht, wodurch ein größerer Unterschied in den Stimmlagen zu finden ist.
+
+Für einen besseren Spracherkenner ist es sinnvoll das Referenzspektrum mit mehr Beispielaufnahmen, möglichst auch von unterschiedlichen Sprechern zu erstellen um einen genaueren Durchschnitt zu erhalten.
+Es könnte auch sinnvoll sein mehrere Referenzsprektren pro Wort zu haben, eines für tiefere Stimme und eines für höhere Stimmen.
+

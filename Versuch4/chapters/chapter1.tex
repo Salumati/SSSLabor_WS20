@@ -6,22 +6,78 @@
 \label{chap:VERSUCH_1_FRAGESTELLUNG}
 
 \subsection*{Fragestellung}
+Das Experiment wird begonnen indem ein beliebiges Sprachsignal mit einem Mikrofon aufgenommen wird.
+Mit Hilfe einer Triggerfunktion soll das Signal so zugeschnitten werden, dass das Sample mit dem gesagten Wort beginnt.
+Im Anschluss wird dieses Signal dann in sein Spektrum zerlegt und dargestellt.
+Als letztes soll noch die Windowing Methode implementiert werden um das Signal genauer zu analysieren.
+
 
 \subsection*{Messprinzip}
+Die Fourieranalyse ist ein essenzielle Methoden für die Signalverarbeitung. Sie erlaubt es die Grundfrequenz sowie die Obertöne einer Schwingung zu ermitteln.
+Durch Windowing lassen sich fastperiodische Signale wie Sprache und Musik besser fouriertransformieren, da bei ihnen nur ein Teilausschnitt und nicht das gerammte Signal untersucht werden muss.
 
 \subsection*{Aufbau}
+Der Aufbau besteht lediglich aus einem Mikrofon welches mit einem Computer verwbunden wurde um über Python das Sprachsignal auf zu nehmen.
+
 
 \subsection*{Messmittel}
 \begin{itemize}
 	\item Mikrofon
-	
 \end{itemize}
 
 \section{Messwerte}
 \label{chap:VERSUCH_1_MESSWERTE}
+Unser belibig aufgenommenes Wort ist: "Naturschutzgebiet"
+
+\begin{center}
+\includegraphics[scale=1]{media/randomVoice/randomVoiceInput.png}
+\captionof{figure}{Fig: Zeitspektrum von Naturschutzgebiet}
+
+\end{center}
+
 
 \section{Auswertung}
 \label{chap:VERSUCH_1_AUSWERTUNG}
+Das zuvor genannte beispiel Wort sieht folgendermaßen aus mit der Trigger Funktion:
+
+\begin{center}
+\includegraphics[scale=1]{media/randomVoice/randomVoiceInput_trigger.png}
+\captionof{figure}{Fig: Ausschnitt des  Zeitspektrum von Naturschutzgebiet}
+
+\end{center}
+
+
+Es wird darauf geachtet das die Signal immer gleich lang sind um sie miteinander vergleichen zu können. Deshalb wird wenn das Sprachsignal < 1 Sekunde lang ist der rest mit 0 aufgefüllt.
+
+
+Dann wurde das getriggerte Signal im Aplituden Spektrum dargestellt:
+
+\begin{center}
+\includegraphics[scale=1]{media/randomVoice/randomVoiceInput_trigger_Amplitudenspektrum.png}
+\captionof{figure}{Fig: Amplitudenspektrum von Naturschutzgebiet}
+\end{center}
+
+
+Das unten stehende Schaubild zeigt das Spektrum welches mit der Windowing Methode transformiert wurde.
+Dazu haben wir das Signal in Abschnitte mit einer Länge von 512 Samples, die sich jeweils zur
+Hälfte überlappen, zerlegt. Jedes Fenster wurde mit einer Gaußschen
+Fensterfunktion gewichtet, die so gewählt wird, dass die Fensterbreite 4 Standardabweichungen
+entspricht. In jedem Fenster haben wir eine lokale Fouriertransformation durchgeführt und
+dann die Fouriertransformierte über alle Fenster gemittelt.
+
+\begin{center}
+\includegraphics[scale=1]{media/randomVoice/randomVoiceInput_trigger_Windowing.png}
+\captionof{figure}{Fig: Amplitudenspektrum von "Naturschutzgebiet" durch windowing}
+
+\end{center}
+
+
+
 
 \section{Interpretation}
 \label{chap:VERSUCH_1_INTERPRETATION}
+Zu dem Trigger schaubild gibt es nicht viel zu sagen. Es wurde lediglich das Signal auf die 1 Sekunde geschnitten ab dem Zeitpunkt wo der Schwellpunkt übertreten wurde.
+Viel interessanter sind hier die beiden Spektren. Zum einen haben wir hier das einfache Signal welches FFT transformiert wurde
+und zum anderen das Spektrum welches mit einem Gauß als Windowing Funktion bestimmt wurde.
+Es ist gut zu erkennen dass das zweite Spektrum viel sauberer berechnet wurde. Die Grundfrequenz und ihre folgenden Harmonischen
+sind weiterhin gleich aber diese sind deutlich besser zu erkennen.
